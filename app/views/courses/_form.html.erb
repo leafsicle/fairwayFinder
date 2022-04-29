@@ -12,6 +12,11 @@
   <% end %>
 
   <div>
+    <%= form.label  "test", style: "display: block" %>
+    <%= form.text_field :course_name %>
+  </div>
+
+  <div>
     <%= form.label :hole_count, style: "display: block" %>
     <%= form.number_field :hole_count %>
   </div>
