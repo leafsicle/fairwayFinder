@@ -1,0 +1,72 @@
+<%= form_with(model: hole) do |form| %>
+  <% if hole.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(hole.errors.count, "error") %> prohibited this hole from being saved:</h2>
+
+      <ul>
+        <% hole.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :hole_number, style: "display: block" %>
+    <%= form.number_field :hole_number %>
+  </div>
+
+  <div>
+    <%= form.label :course_id, style: "display: block" %>
+    <%= form.number_field :course_id %>
+  </div>
+
+  <div>
+    <%= form.label :par_value, style: "display: block" %>
+    <%= form.number_field :par_value %>
+  </div>
+
+  <div>
+    <%= form.label :course_hcap_val, style: "display: block" %>
+    <%= form.number_field :course_hcap_val %>
+  </div>
+
+  <div>
+    <%= form.label :center_of_green, style: "display: block" %>
+    <%= form.text_field :center_of_green %>
+  </div>
+
+  <div>
+    <%= form.label :forward_tee_distance, style: "display: block" %>
+    <%= form.number_field :forward_tee_distance %>
+  </div>
+
+  <div>
+    <%= form.label :mid_tee_distance, style: "display: block" %>
+    <%= form.number_field :mid_tee_distance %>
+  </div>
+
+  <div>
+    <%= form.label :long_tee_distance, style: "display: block" %>
+    <%= form.number_field :long_tee_distance %>
+  </div>
+
+  <div>
+    <%= form.label :fourth_tee_distance, style: "display: block" %>
+    <%= form.number_field :fourth_tee_distance %>
+  </div>
+
+  <div>
+    <%= form.label :fifth_tee_distance, style: "display: block" %>
+    <%= form.number_field :fifth_tee_distance %>
+  </div>
+
+  <div>
+    <%= form.label :course_id, style: "display: block" %>
+    <%= form.text_field :course_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
