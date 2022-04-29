@@ -1,3 +1,4 @@
 class Course < ApplicationRecord
-  has_many :holes, class_name: "Hole", foreign_key: "course_id"
+  has_many :holes, :dependent => :delete_all
+
 end

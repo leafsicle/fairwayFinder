@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_29_203246) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_29_204317) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,6 +43,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_203246) do
     t.string "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "holes", force: :cascade do |t|
+    t.integer "hole_number"
+    t.integer "par_value"
+    t.integer "course_hcap_val"
+    t.point "center_of_green"
+    t.integer "forward_tee_distance"
+    t.integer "mid_tee_distance"
+    t.integer "long_tee_distance"
+    t.integer "fourth_tee_distance"
+    t.integer "fifth_tee_distance"
+    t.bigint "course_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_holes_on_course_id"
   end
 
   create_table "users", force: :cascade do |t|
