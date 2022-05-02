@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
   has_many :holes, :dependent => :delete_all
+  has_many :scorecards 
 
   validates :hole_count, presence: true, numericality: { in: 1..21 }
   validates :course_name, presence: true, length: {minimum:2, maximum:30}

@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_many :scorecards, foreign_key: "scorecard_id", :dependent => :delete_all
+
+  
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 20 }
   validates :username, presence: true, length: { maximum: 20 }, uniqueness: true
