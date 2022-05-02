@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_29_210311) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_02_205259) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,7 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_29_210311) do
     t.integer "home_course_id"
     t.float "handicap"
     t.string "street_address"
-    t.string "address_locatity"
+    t.string "address_locality"
     t.string "address_region"
     t.string "postal_code"
     t.datetime "created_at", null: false
