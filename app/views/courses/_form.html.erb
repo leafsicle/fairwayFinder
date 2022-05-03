@@ -12,23 +12,28 @@
   <% end %>
 
   <div>
-    <%= form.label  "test", style: "display: block" %>
+    <%= form.label "Course name:", style: "display: block" %>
     <%= form.text_field :course_name %>
   </div>
 
   <div>
     <%= form.label :hole_count, style: "display: block" %>
-    <%= form.number_field :hole_count %>
+    <%= form.number_field :hole_count, min:4, max: 18, placeholder:18 %>
   </div>
 
   <div>
-    <%= form.label :membership, style: "display: block" %>
-    <%= form.check_box :membership %>
+    <%= form.label "Is this a members only Course?", style: "display: block" %>
+    <%= form.check_box :membership %> 
+    <%
+=begin%>
+  TODO: turn this into a 'yes' 'no' select for clarity
+<%
+=end%>
   </div>
 
   <div>
     <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+    <%= form.telephone_field :phone %>
   </div>
 
   <div>
@@ -38,12 +43,17 @@
 
   <div>
     <%= form.label :hour_open, style: "display: block" %>
-    <%= form.number_field :hour_open %>
+    <%= form.number_field :hour_open,min: 0, max:23 %>
+    <%
+=begin%>
+  time_field should be used on these two^V
+<%
+=end%>
   </div>
 
   <div>
     <%= form.label :hour_close, style: "display: block" %>
-    <%= form.number_field :hour_close %>
+    <%= form.number_field :hour_close,min: 0, max:23 %>
   </div>
 
   <div>

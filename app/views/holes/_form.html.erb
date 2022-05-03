@@ -12,33 +12,32 @@
   <% end %>
 
   <div>
-    <%= form.label :hole_number, style: "display: block" %>
-    <%= form.number_field :hole_number %>
-  </div>
-
-  <div>
     <%= form.label :course_id, style: "display: block" %>
-    <%= form.number_field :course_id %>
+    <%=form.collection_select( :course_id, Course.all, :id, :course_name, prompt:true)%>
+  </div>
+  <div>
+    <%= form.label :hole_number, style: "display: block" %>
+    <%= form.number_field :hole_number,min:1, max:18 %>
   </div>
 
   <div>
     <%= form.label :par_value, style: "display: block" %>
-    <%= form.number_field :par_value %>
+    <%= form.number_field :par_value, min:2, max:6 %>
   </div>
 
   <div>
     <%= form.label :course_hcap_val, style: "display: block" %>
-    <%= form.number_field :course_hcap_val %>
+    <%= form.number_field :course_hcap_val,min:1, max:6 %>
   </div>
 
   <div>
-    <%= form.label :center_of_green, style: "display: block" %>
-    <%= form.text_field :center_of_green %>
+    <%= form.label :center_green_lat, style: "display: block" %>
+    <p> Working to add GPS funcitonality soon! </p>
   </div>
 
   <div>
     <%= form.label :forward_tee_distance, style: "display: block" %>
-    <%= form.number_field :forward_tee_distance %>
+    <p> Working to add GPS funcitonality soon! </p>
   </div>
 
   <div>
@@ -59,11 +58,6 @@
   <div>
     <%= form.label :fifth_tee_distance, style: "display: block" %>
     <%= form.number_field :fifth_tee_distance %>
-  </div>
-
-  <div>
-    <%= form.label :course_id, style: "display: block" %>
-    <%= form.text_field :course_id %>
   </div>
 
   <div>
