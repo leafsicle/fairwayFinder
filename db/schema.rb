@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_02_211618) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_03_170518) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,13 +44,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_02_211618) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "course_name"
+    t.integer "forward_tee_slope"
+    t.float "forward_tee_rating"
+    t.integer "mid_tee_slope"
+    t.float "mid_tee_rating"
+    t.integer "long_tee_slope"
+    t.float "long_tee_rating"
+    t.integer "fourth_tee_slope"
+    t.float "fourth_tee_rating"
+    t.integer "fifth_tee_slope"
+    t.float "fifth_tee_rating"
   end
 
   create_table "holes", force: :cascade do |t|
     t.integer "hole_number"
     t.integer "par_value"
     t.integer "course_hcap_val"
-    t.point "center_of_green"
     t.integer "forward_tee_distance"
     t.integer "mid_tee_distance"
     t.integer "long_tee_distance"
@@ -59,6 +68,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_02_211618) do
     t.bigint "course_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "center_green_lat"
+    t.float "center_green_long"
     t.index ["course_id"], name: "index_holes_on_course_id"
   end
 
