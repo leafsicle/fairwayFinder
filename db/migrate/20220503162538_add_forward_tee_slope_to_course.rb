@@ -11,6 +11,7 @@ class AddForwardTeeSlopeToCourse < ActiveRecord::Migration[7.0]
       t.float :fourth_tee_rating
       t.integer :fifth_tee_slope
       t.float :fifth_tee_rating
+    end
   end
   def def down 
     change_table :courses do |t|
