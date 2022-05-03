@@ -1,12 +1,13 @@
-1<div id="<%= dom_id hole %>">
+<div id="<%= dom_id hole %>">
+  <p>
+    <h1>
+    <a href="/courses/1">
+    <%= Course.find(hole.id).course_name %></h1>
+    </a>
+  </p> 
   <p>
     <strong>Hole number:</strong>
     <%= hole.hole_number %>
-  </p>
-
-  <p>
-    <strong>Course:</strong>
-    <%= hole.course_id %>
   </p>
 
   <p>
@@ -19,39 +20,38 @@
     <%= hole.course_hcap_val %>
   </p>
 
+  <p>      
+    <strong>Center of green Latitude</strong>
+    <%= hole.center_green_lat.to_s %>
+  </p>
   <p>
-    <strong>Center of green:</strong>
-    <%= hole.center_of_green %>
+    <strong>Center of green Longitude</strong>
+    <%= hole.center_green_long.to_s %>
   </p>
 
   <p>
     <strong>Forward tee distance:</strong>
-    <%= hole.forward_tee_distance %>
+    <%= hole.forward_tee_distance %> yds yds
   </p>
 
   <p>
     <strong>Mid tee distance:</strong>
-    <%= hole.mid_tee_distance %>
+    <%= hole.mid_tee_distance %> yds
   </p>
 
   <p>
     <strong>Long tee distance:</strong>
-    <%= hole.long_tee_distance %>
+    <%= hole.long_tee_distance %> yds
   </p>
 
   <p>
     <strong>Fourth tee distance:</strong>
-    <%= hole.fourth_tee_distance %>
+    <%= hole.fourth_tee_distance %> yds
   </p>
 
   <p>
     <strong>Fifth tee distance:</strong>
-    <%= hole.fifth_tee_distance %>
-  </p>
-
-  <p>
-    <strong>Course:</strong>
-    <%= hole.course_id %>
+    <%= hole.fifth_tee_distance %> yds
   </p>
 
 </div>
