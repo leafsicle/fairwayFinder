@@ -16,4 +16,5 @@ class AddForwardTeeSlopeToCourse < ActiveRecord::Migration[7.0]
     change_table :courses do |t|
       t.remove :forward_tee_slope, :forward_tee_rating, :mid_tee_slope, :mid_tee_rating, :long_tee_slope, :long_tee_rating, :fourth_tee_slope, :fourth_tee_rating, :fifth_tee_slope, :fifth_tee_rating
     end
+  end
 end
