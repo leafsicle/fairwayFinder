@@ -6,19 +6,19 @@ In the db/user_seeding.rb we can create the mapping from CSV to our model and cr
 require 'csv'
 require_relative './data/users.csv'
 def seed_users
-csv_file_path = '/[project_path]/db/data/users.csv'
-puts 'Seeding users from #{csv_file_path}...'
-f = File.new(csv_file_path, 'r')
-csv = CSV.new(f)
-headers = csv.shift
+  csv_file_path = '/[project_path]/db/data/users.csv'
+  puts 'Seeding users from #{csv_file_path}...'
+  f = File.new(csv_file_path, 'r')
+  csv = CSV.new(f)
+  headers = csv.shift
 
-csv.each do |row|
-user_information = {
-name: row[0],
-age: row[1]
-}
-inv = User.create(user_information)
-end
+  csv.each do |row|
+    user_information = {
+      name: row[0],
+      age: row[1]
+    }
+    inv = User.create(user_information)
+  end
 puts 'Seeding users from #{csv_file_path} done.'
 end
 

@@ -42,7 +42,7 @@ Course.create!(
   fifth_tee_rating: 71.3,
   created_at: Time.now, 
   updated_at: Time.now, 
-  )
+  ) 
   @courses = Course.all
   puts "Adding ice to #{@courses.count} clubhouses" unless @courses.length <2
   puts "Adding ice to the clubhouse" if @courses.length <2
@@ -317,7 +317,8 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
-  puts "cutting the grass on #{Holes.count.to_s}" 
+  @holes=Hole.all
+  puts "Cutting the grass on #{@holes.count.to_s}" 
 
   User.create(
     first_name: "Matt",
@@ -332,7 +333,21 @@ Course.create!(
     address_region: "DC",
     postal_code: "20500"
   )
-  puts "Buying Golf Clubs for #{User.all.count} users"  unless @courses.length <2
-  puts "Buying Golf Clubs for #{User.all.count} user"  if @courses.length <2
+  User.create(
+    first_name: "Pockets",
+    last_name: "McSpruce",
+    username: "Sprucey",
+    email: "psprucey@gmail.com",
+    user_type_id: 3,
+    home_course_id: 1,
+    handicap: 18,
+    street_address: "42 Wallaby way",
+    address_locality: "Sydney",
+    address_region: "Florida",
+    postal_code: "33701"
+  )
+  @users=User.all
+  puts "Buying Golf Clubs for #{@users.all.count} users"  unless @users.length <2
+  puts "Buying Golf Clubs for #{@users.all.count} user"  if @users.length <2
   
   puts "Grass and DB are fully seeded!"
