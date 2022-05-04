@@ -4,10 +4,11 @@
 
 <div id="courses">
   <% @courses.each do |course| %>
-    <%= render course %>
     <p>
-      <%= link_to "Show this course", course %>
+      <%= link_to course.course_name, course %> - <%= course.hole_count%>
+      Par value <%=course.holes.sum(par_value)%>
     </p>
+    
   <% end %>
 </div>
 

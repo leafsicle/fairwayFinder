@@ -66,5 +66,5 @@ class ScorecardsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def scorecard_params
       params.require(:scorecard).permit(:user_id)
-    end
+    end 
 end

@@ -43,6 +43,7 @@ Course.create!(
   created_at: Time.now, 
   updated_at: Time.now, 
   ) 
+
   @courses = Course.all
   puts "Adding ice to #{@courses.count} clubhouses" unless @courses.length <2
   puts "Adding ice to the clubhouse" if @courses.length <2
@@ -62,6 +63,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   ) 
+
   Hole.create!(
     hole_number:2,
     course_hcap_val: 2,
@@ -77,6 +79,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:3,
     course_hcap_val:18,
@@ -92,6 +95,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+  
   Hole.create!(
     hole_number:4,
     course_hcap_val:8,
@@ -107,6 +111,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:5,
     course_hcap_val:4,
@@ -122,6 +127,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:6,
     course_hcap_val:6,
@@ -137,6 +143,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:7,
     course_hcap_val:12,
@@ -152,6 +159,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:8,
     course_hcap_val:16,
@@ -167,6 +175,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:9,
     course_hcap_val:10,
@@ -182,6 +191,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:10,
     course_hcap_val:15,
@@ -197,6 +207,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:11,
     course_hcap_val:17,
@@ -212,6 +223,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:12,
     course_hcap_val:1,
@@ -227,6 +239,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:13,
     course_hcap_val:11,
@@ -242,6 +255,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:14,
     course_hcap_val:5,
@@ -257,6 +271,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:15,
     course_hcap_val:13,
@@ -272,6 +287,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:16,
     course_hcap_val:9,
@@ -287,6 +303,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:17,
     course_hcap_val:3,
@@ -302,6 +319,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   Hole.create!(
     hole_number:18,
     course_hcap_val:7,
@@ -317,6 +335,7 @@ Course.create!(
     created_at: Time.now, 
     updated_at: Time.now, 
   )
+
   @holes=Hole.all
   puts "Cutting the grass on #{@holes.count.to_s}" 
 
@@ -333,6 +352,7 @@ Course.create!(
     address_region: "DC",
     postal_code: "20500"
   )
+
   User.create(
     first_name: "Pockets",
     last_name: "McSpruce",
@@ -346,6 +366,7 @@ Course.create!(
     address_region: "Florida",
     postal_code: "33701"
   )
+  
   @users=User.all
   puts "Buying Golf Clubs for #{@users.all.count} users"  unless @users.length <2
   puts "Buying Golf Clubs for #{@users.all.count} user"  if @users.length <2
