@@ -6,7 +6,8 @@
   <% @courses.each do |course| %>
     <p>
       <%= link_to course.course_name, course %> - <%= course.hole_count%>
-      Par value <%=course.holes.sum(par_value)%>
+      Par value <%=course.holes.map{|hole| hole.par_value}.sum%>
+      
     </p>
     
   <% end %>
