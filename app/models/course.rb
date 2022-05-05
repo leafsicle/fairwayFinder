@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  has_many :holes, :dependent => :destroy
+  has_many :holes, :dependent => :destroy,inverse_of: 'course'
   has_many :scorecards
 
   validates :hole_count, presence: true, numericality: { in: 1..21 }
@@ -11,10 +11,8 @@ class Course < ApplicationRecord
   validates :address_locality, presence: true
   validates :address_region, presence: true
   validates :postal_code, presence: true
-
+  
   def course_par
     holes.reduce(0) { |sum, hole| sum + hole.par_value }
   end
-
-  # TODO: Add a "link to score card pdf?rai"
 end
