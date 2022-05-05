@@ -5,11 +5,10 @@
 <div id="courses">
   <% @courses.each do |course| %>
     <p>
-      <%= link_to course.course_name, course %> - <%= course.hole_count%>
-      Par value <%=course.holes.map{|hole| hole.par_value}.sum%>
-      
+      <%= link_to course.course_name, course %> - <%= course.hole_count%> holes 
+      <br/>
+      Par <%=course.course_par%>
     </p>
-    
   <% end %>
 </div>
 
