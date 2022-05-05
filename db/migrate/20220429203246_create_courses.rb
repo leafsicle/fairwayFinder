@@ -5,6 +5,7 @@ class CreateCourses < ActiveRecord::Migration[7.0]
       t.boolean :membership
       t.string :phone
       t.string :website_url
+      t.string :scorecard_url
       t.integer :hour_open
       t.integer :hour_close
       t.boolean :driving_range

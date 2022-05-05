@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_170518) do
     t.boolean "membership"
     t.string "phone"
     t.string "website_url"
+    t.string "scorecard_url"
     t.integer "hour_open"
     t.integer "hour_close"
     t.boolean "driving_range"
