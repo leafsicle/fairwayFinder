@@ -3,7 +3,14 @@ class CoursesController < ApplicationController
 
   # GET /courses or /courses.json
   def index
-    @courses = Course.all
+    filter = params[:filter]
+    all_courses = Course.all.order(:course_name)
+
+    if filter
+      @courses = all_courses.where("course_name like ?", "%#{filter}% ")
+    else
+      @courses = all_courses
+    end
   end
 
   # GET /courses/1 or /courses/1.json
@@ -58,13 +65,14 @@ class CoursesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_course
-      @course = Course.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def course_params
-      params.require(:course).permit(:course_name, :hole_count, :membership, :phone, :website_url, :hour_open, :hour_close, :driving_range, :putting_green, :chipping_area, :practice_bunker, :riding_cart, :push_cart, :pro_shop, :club_rental, :caddie_services, :lessons, :locker_room_onsite, :shower_onsite, :lodging_onsite, :clubfitting, :punched_greens, :sanded_greens, :street_address, :address_locality, :address_region, :postal_code)
-    end
-end 
+  # Use callbacks to share common setup or constraints between actions.
+  def set_course
+    @course = Course.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def course_params
+    params.require(:course).permit(:course_name, :hole_count, :membership, :phone, :website_url, :hour_open, :hour_close, :driving_range, :putting_green, :chipping_area, :practice_bunker, :riding_cart, :push_cart, :pro_shop, :club_rental, :caddie_services, :lessons, :locker_room_onsite, :shower_onsite, :lodging_onsite, :clubfitting, :punched_greens, :sanded_greens, :street_address, :address_locality, :address_region, :postal_code, :filter, :scorecard_url)
+  end
+end
