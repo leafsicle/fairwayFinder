@@ -8,6 +8,7 @@ Course.create!(
   hole_count: 18,
   phone: "7278937800",
   website_url: "www.golfstpete.com",
+  scorecard_url: "http://www.golfstpete.com/pdf/MangroveBay_BenchCraftCompany_SC2.pdf",
   hour_open: 6,
   hour_close: 6,
   driving_range: true,
@@ -49,6 +50,7 @@ Course.create!(
   hole_count: 18,
   phone: "800-492-6899",
   website_url: "https://www.innisbrookgolfresort.com/",
+  scorecard_url: "https://www.innisbrookgolfresort.com/pdf/copperheadscorecard.pdf",
   hour_open: 6,
   hour_close: 7,
   driving_range: true,
@@ -667,7 +669,7 @@ Hole.create!(
 
 @holes = Hole.all
 puts "Cutting the grass on #{@holes.count.to_s} holes."
-puts "Incase you were wondering that is a combined #{@holes.sum (:fifth_tee_distance)} yds!!"
+puts "If you were wondering that is a combined #{@holes.sum (:fifth_tee_distance)} yds!!"
 User.create(
   first_name: "Matt",
   last_name: "Cooke",
