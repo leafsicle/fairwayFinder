@@ -1,136 +1,119 @@
 <div id="<%= dom_id course %>">
+  <h2>
+    <%= link_to course.course_name, course.website_url %>
+  </h2>
   <p>
-    <strong>Course name:</strong>
-    <%= course.course_name%>
+    <%= link_to course.hole_count.to_s+" holes", '/holes' %> -Par <%=course.course_par%>
+    <%
+=begin%>
+  for each hole up to hole_count, tell the admin how many holes 
+  that are missing and offer a way to edit a specific hole or 
+  continually ask for the next hole information OR to save the current holes and pause for now.
+  I don't think that I want to make them 
+<%
+=end%>
   </p>
   <p>
-    <strong>Hole count:</strong>
-    <%= course.hole_count %>
+    <%= course.hour_open %>am to <%= course.hour_close %>pm
   </p>
-
-  <p>
-    <strong>Membership:</strong>
-    <%= course.membership %>
+  <p class= "course-addr">
+    <%= course.street_address %>
   </p>
-
+  <p class= "course-addr">
+    <%= course.address_locality %>
+  </p>
+  <p class= "course-addr">
+    <%= course.address_region %>
+  </p>
+  <p class= "course-addr">
+    <%= course.postal_code %>
+  </p>
   <p>
-    <strong>Phone:</strong>
     <%= course.phone %>
   </p>
 
-  <p>
-    <strong>Website url:</strong>
-    <%= course.website_url %>
-  </p>
-
-  <p>
-    <strong>Hour open:</strong>
-    <%= course.hour_open %>
-  </p>
-
-  <p>
-    <strong>Hour close:</strong>
-    <%= course.hour_close %>
-  </p>
-
-  <p>
-    <strong>Driving range:</strong>
-    <%= course.driving_range %>
-  </p>
-
-  <p>
-    <strong>Putting green:</strong>
-    <%= course.putting_green %>
-  </p>
-
-  <p>
-    <strong>Chipping area:</strong>
-    <%= course.chipping_area %>
-  </p>
-
-  <p>
-    <strong>Practice bunker:</strong>
-    <%= course.practice_bunker %>
-  </p>
-
-  <p>
-    <strong>Riding cart:</strong>
-    <%= course.riding_cart %>
-  </p>
-
-  <p>
-    <strong>Push cart:</strong>
-    <%= course.push_cart %>
-  </p>
-
-  <p>
-    <strong>Pro shop:</strong>
-    <%= course.pro_shop %>
-  </p>
-
-  <p>
-    <strong>Club rental:</strong>
-    <%= course.club_rental %>
-  </p>
-
-  <p>
-    <strong>Caddie services:</strong>
-    <%= course.caddie_services %>
-  </p>
-
-  <p>
-    <strong>Lessons:</strong>
-    <%= course.lessons %>
-  </p>
-
-  <p>
-    <strong>Locker room onsite:</strong>
-    <%= course.locker_room_onsite %>
-  </p>
-
-  <p>
-    <strong>Shower onsite:</strong>
-    <%= course.shower_onsite %>
-  </p>
-
-  <p>
-    <strong>Lodging onsite:</strong>
-    <%= course.lodging_onsite %>
-  </p>
-
-  <p>
-    <strong>Clubfitting:</strong>
-    <%= course.clubfitting %>
-  </p>
-
-  <p>
-    <strong>Punched greens:</strong>
-    <%= course.punched_greens %>
-  </p>
-
-  <p>
-    <strong>Sanded greens:</strong>
-    <%= course.sanded_greens %>
-  </p>
-
-  <p>
-    <strong>Street address:</strong>
-    <%= course.street_address %>
-  </p>
-
-  <p>
-    <strong>Address locality:</strong>
-    <%= course.address_locality %>
-  </p>
-
-  <p>
-    <strong>Address region:</strong>
-    <%= course.address_region %>
-  </p>
-
-  <p>
-    <strong>Postal code:</strong>
-    <%= course.postal_code %>
-  </p>
-
+  <h4>Course Features:</h4>
+  <ul>
+    <%if course.membership?%>
+      <li>Course membership</li>
+    <%end%>
+    <%if course.driving_range?%>
+      <li>Driving Range</li>
+    <%end%>
+    <% if course.putting_green? %>
+      <li>
+        Putting Green
+      </li>
+    <%end%>
+    <% if course.chipping_area? %>
+      <li>
+        Chipping Area
+      </li>
+    <%end%>
+    <% if course.practice_bunker? %>
+      <li>
+        Practice Bunker
+      </li>
+    <%end%>
+    <% if course.riding_cart? %>
+      <li>
+        Rental Golf Carts
+      </li>
+    <%end%>
+    <% if course.push_cart? %>
+      <li>
+        Push carts for rent
+      </li>
+    <%end%>
+    <% if course.pro_shop? %>
+      <li>
+        Stocked Pro shop
+      </li>
+    <%end%>
+    <% if course.club_rental? %>
+      <li>
+        Club Rental
+      </li>
+    <%end%>
+    <% if course.caddie_services? %>
+      <li>
+        Caddies available for hire
+      </li>
+    <%end%>
+    <% if course.lessons? %>
+      <li>
+        Lessons with a PGA Pro
+      </li>
+    <%end%>
+    <% if course.locker_room_onsite? %>
+      <li>
+        Locker room
+      </li>
+    <%end%>
+    <% if course.shower_onsite? %>
+      <li>
+        Shower facilities
+      </li>
+    <%end%>
+    <% if course.lodging_onsite? %>
+      <li>
+        Lodging
+      </li>
+    <%end%>
+    <% if course.clubfitting? %>
+      <li>
+        Club-fitting services
+      </li>
+    <%end%>
+    <% if course.punched_greens? %>
+      <li>
+        Players reported punched greens today
+      </li>
+    <%end%>
+    <% if course.sanded_greens? %>
+      <li>
+        Players have reported sanded greens today
+      </li>
+    <%end%>
+  </ul>
 </div>
