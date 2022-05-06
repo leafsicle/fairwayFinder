@@ -1,16 +1,16 @@
 <div id="<%= dom_id course %>">
-  <h2>
+  <h2 title="Links externally to course websitle">
     <%= link_to course.course_name, course.website_url %>
   </h2>
   <p>
     <%= link_to course.hole_count.to_s+" holes", '/holes' %> -Par <%=course.course_par%>
     <%
 =begin%>
-  for each hole up to hole_count, tell the admin how many holes 
-  that are missing and offer a way to edit a specific hole or 
-  continually ask for the next hole information OR to save the current holes and pause for now.
-  I don't think that I want to make them 
-<%
+    for each hole up to hole_count, tell the admin how many holes 
+    that are missing and offer a way to edit a specific hole or 
+    continually ask for the next hole information OR to save the current holes and pause for now.
+    I don't think that I want to make them 
+    <%
 =end%>
   </p>
   <p>
@@ -31,7 +31,6 @@
   <p>
     <%= course.phone %>
   </p>
-
   <h4>Course Features:</h4>
   <ul>
     <%if course.membership?%>
