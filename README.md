@@ -1,5 +1,10 @@
 # README
 
+Primary #219e59
+White #F6FFF8
+Lt-Blk #141115
+Alert orange ##FB6107
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
