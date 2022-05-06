@@ -1,24 +1,12 @@
 <div id="<%= dom_id hole %>">
-  <p>
-    <strong>Hole <%= hole.hole_number %>
-    </strong>
-  </p>
-  <p>
-    <strong>Par value:</strong>
-    <%= hole.par_value %>
-  </p>
-  <p>
-    <strong>Course hcap val:</strong>
-    <%= hole.course_hcap_val %>
-  </p>
-  <p>
-    <strong>Center of green Latitude</strong>
-    <%= hole.center_green_lat.to_s %>
-  </p>
-  <p>
-    <strong>Center of green Longitude</strong>
-    <%= hole.center_green_long.to_s %>
-  </p>
+  <%# this partial represents what is seen from a course perspective %>
+  <h3>
+    <%= link_to "#{hole.course.course_name} Hole #{hole.hole_number}", hole_path(hole) %>
+  </h3>
+  <b>Par</b>
+  <%= hole.par_value %>
+  <b>HCAP</b>
+  <%= hole.course_hcap_val %>
   <p>
     <% if hole.forward_tee_distance %>
       <%= hole.forward_tee_distance %> yds  |
