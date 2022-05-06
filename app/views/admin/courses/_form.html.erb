@@ -1,0 +1,133 @@
+<%= form_with(model: [:admin, course]) do |form| %>
+  <% if course.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+      <ul>
+        <% course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div>
+    <%= form.label "Course name:", style: "display: block" %>
+    <%= form.text_field :course_name %>
+  </div>
+  <div>
+    <%= form.label :hole_count, style: "display: block" %>
+    <%= form.number_field :hole_count, min:4, max: 18, placeholder:18 %>
+  </div>
+  <div>
+    <%= form.label "Is this a members only Course?", style: "display: block" %>
+    <%= form.check_box :membership %>
+    <%
+=begin%>
+    TODO: turn this into a 'yes' 'no' select for clarity
+    <%
+=end%>
+  </div>
+  <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.telephone_field :phone %>
+  </div>
+  <div>
+    <%= form.label :website_url, style: "display: block" %>
+    <%= form.text_field :website_url %>
+  </div>
+  <div>
+    <%= form.label :hour_open, style: "display: block" %>
+    <%= form.number_field :hour_open,min: 0, max:23 %>
+    <%
+=begin%>
+    time_field should be used on these two^V
+    <%
+=end%>
+  </div>
+  <div>
+    <%= form.label :hour_close, style: "display: block" %>
+    <%= form.number_field :hour_close,min: 0, max:23 %>
+  </div>
+  <div>
+    <%= form.label :driving_range, style: "display: block" %>
+    <%= form.check_box :driving_range %>
+  </div>
+  <div>
+    <%= form.label :putting_green, style: "display: block" %>
+    <%= form.check_box :putting_green %>
+  </div>
+  <div>
+    <%= form.label :chipping_area, style: "display: block" %>
+    <%= form.check_box :chipping_area %>
+  </div>
+  <div>
+    <%= form.label :practice_bunker, style: "display: block" %>
+    <%= form.check_box :practice_bunker %>
+  </div>
+  <div>
+    <%= form.label :riding_cart, style: "display: block" %>
+    <%= form.check_box :riding_cart %>
+  </div>
+  <div>
+    <%= form.label :push_cart, style: "display: block" %>
+    <%= form.check_box :push_cart %>
+  </div>
+  <div>
+    <%= form.label :pro_shop, style: "display: block" %>
+    <%= form.check_box :pro_shop %>
+  </div>
+  <div>
+    <%= form.label :club_rental, style: "display: block" %>
+    <%= form.check_box :club_rental %>
+  </div>
+  <div>
+    <%= form.label :caddie_services, style: "display: block" %>
+    <%= form.check_box :caddie_services %>
+  </div>
+  <div>
+    <%= form.label :lessons, style: "display: block" %>
+    <%= form.check_box :lessons %>
+  </div>
+  <div>
+    <%= form.label :locker_room_onsite, style: "display: block" %>
+    <%= form.check_box :locker_room_onsite %>
+  </div>
+  <div>
+    <%= form.label :shower_onsite, style: "display: block" %>
+    <%= form.check_box :shower_onsite %>
+  </div>
+  <div>
+    <%= form.label :lodging_onsite, style: "display: block" %>
+    <%= form.check_box :lodging_onsite %>
+  </div>
+  <div>
+    <%= form.label :clubfitting, style: "display: block" %>
+    <%= form.check_box :clubfitting %>
+  </div>
+  <div>
+    <%= form.label :punched_greens, style: "display: block" %>
+    <%= form.check_box :punched_greens %>
+  </div>
+  <div>
+    <%= form.label :sanded_greens, style: "display: block" %>
+    <%= form.check_box :sanded_greens %>
+  </div>
+  <div>
+    <%= form.label :street_address, style: "display: block" %>
+    <%= form.text_field :street_address %>
+  </div>
+  <div>
+    <%= form.label "City", style: "display: block" %>
+    <%= form.text_field :address_locality %>
+  </div>
+  <div>
+    <%= form.label "State", style: "display: block" %>
+    <%= form.text_field :address_region %>
+  </div>
+  <div>
+    <%= form.label "Zip Code", style: "display: block" %>
+    <%= form.text_field :postal_code %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

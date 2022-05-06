@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  has_many :holes, :dependent => :destroy,inverse_of: 'course'
+  has_many :holes, :dependent => :destroy, inverse_of: 'course'
   has_many :scorecards
 
   validates :hole_count, presence: true, numericality: { in: 1..21 }
@@ -15,4 +15,6 @@ class Course < ApplicationRecord
   def course_par
     holes.reduce(0) { |sum, hole| sum + hole.par_value }
   end
+
+
 end
