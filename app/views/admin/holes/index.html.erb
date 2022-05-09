@@ -1,21 +1,34 @@
 <p style="color: green"><%= notice %></p>
-<h1>Holes by course</h1>
+<h1 class ="bg:green">Holes by course</h1>
 <ul class="nav">
+  <button type="button" 
+        class="btn btn-lg btn-danger" 
+        data-bs-toggle="popover" 
+        title="Popover title" 
+        data-bs-content="Amazing content, right ?">
+    Click to toggle popover
+  </button>
   <% unless @holes.count > 18%>
     <li>
-      <button>
-        <%= link_to "Add a new hole", new_admin_hole_path %>
+      <button class = "btn btn-md">
+        <%= button_to "Add a new hole", new_admin_hole_path %>
       </button>
+      <button type="button" 
+        class="btn btn-lg btn-danger" 
+        data-bs-toggle="popover" 
+        title="Popover title" 
+        data-bs-content="Amazing content, right ?">
+        Click to toggle popover
+      </li>
+    <% end %>
+    <li>
+      <%= link_to "See All courses", admin_courses_path %>
     </li>
-  <% end %>
-  <li>
-    <%= link_to "See All courses", admin_courses_path %>
-  </li>
-</ul>
-<div id="holes" class="flexw">
-  <% @holes.each do |hole| %>
-    <span class ="card gradient_green ">
-      <%= render hole %>
-    </span>
-  <% end %>
-</div>
+  </ul>
+  <div id="holes" class="flexw">
+    <% @holes.each do |hole| %>
+      <span class ="card gradient_green ">
+        <%= render hole %>
+      </span>
+    <% end %>
+  </div>

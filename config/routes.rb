@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    root to: "/courses#index"
+    root to: "/admin/courses#index"
     resources :holes
     resources :courses
     resources :users
