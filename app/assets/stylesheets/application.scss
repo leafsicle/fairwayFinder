@@ -1,12 +1,3 @@
-
-$theme-colors: (
-  "primary": #219e59,
-  "light":  #F6FFF8,
-  "dark":#141115,
-  "warning":#FB6107
-);
-@import "bootstrap";
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -20,4 +11,12 @@ $theme-colors: (
  * It is generally better to create a new file per style scope.
  *
  */
+$theme-colors: (
+  "primary": #1FD16F,
+  "secondary":#0D4526,
+  "light":  #F6FFF8,
+  "dark":#141115,
+  "warning":#FB6107
+);
+@import "bootstrap";
 
