@@ -16,5 +16,11 @@ class Course < ApplicationRecord
     holes.reduce(0) { |sum, hole| sum + hole.par_value }
   end
 
+  def address
+    [street_address, address_locality, address_region, "USA" ].compact.join(', ')
+  end
+
+  geocoded_by :address
+  after_validation :geocode
 
 end

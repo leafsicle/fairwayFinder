@@ -80,3 +80,5 @@ group :test do
 end
 
 gem "awesome_print", "~> 1.9"
+
+gem "geocoder", "~> 1.7"

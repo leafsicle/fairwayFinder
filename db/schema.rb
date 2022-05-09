@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_03_170518) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_09_205431) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_170518) do
     t.float "fourth_tee_rating"
     t.integer "fifth_tee_slope"
     t.float "fifth_tee_rating"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.decimal "rating"
   end
 
   create_table "holes", force: :cascade do |t|
@@ -69,8 +72,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_03_170518) do
     t.bigint "course_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "center_green_lat"
-    t.float "center_green_long"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.index ["course_id"], name: "index_holes_on_course_id"
   end
 

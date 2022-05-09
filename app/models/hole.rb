@@ -1,5 +1,5 @@
 class Hole < ApplicationRecord
-  belongs_to :course,foreign_key: 'course_id'
+  belongs_to :course, foreign_key: 'course_id'
 
   validates :hole_number, presence: true, numericality: true
   validates :par_value, presence: true, numericality: { in: 3..8 }
