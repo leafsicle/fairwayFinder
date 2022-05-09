@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-200;
+  }
+}
+
+*/
+
+/* Primary #219e59
+White #F6FFF8
+Lt-Blk #141115
+Alert orange ##FB6107 */
