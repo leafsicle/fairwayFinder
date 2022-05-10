@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :scorecards, foreign_key: "scorecard_id"
-
+  has_one :user_type
+  
   validates :first_name, presence: true, length: { maximum: 20 }
   validates :last_name, presence: true, length: { maximum: 20 }
   validates :username, presence: true, length: { maximum: 20 },confirmation: { case_sensitive: true }, uniqueness: true

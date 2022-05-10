@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_10_162005) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_10_164330) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -60,6 +60,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_10_162005) do
     t.decimal "rating"
   end
 
+  create_table "hole_performances", force: :cascade do |t|
+    t.integer "strokes"
+    t.integer "greenside_bunker_count"
+    t.integer "fairway_bunker_count"
+    t.integer "water_penalty_count"
+    t.integer "out_of_bounds_penalty"
+    t.integer "penalty_stroke_count"
+    t.integer "putts"
+    t.bigint "scorecard_id", null: false
+    t.bigint "hole_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hole_id"], name: "index_hole_performances_on_hole_id"
+    t.index ["scorecard_id"], name: "index_hole_performances_on_scorecard_id"
+  end
+
   create_table "holes", force: :cascade do |t|
     t.integer "hole_number"
     t.integer "par_value"
@@ -87,6 +103,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_10_162005) do
     t.index ["user_id"], name: "index_scorecards_on_user_id"
   end
 
+  create_table "user_types", force: :cascade do |t|
+    t.string "code"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -103,6 +126,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_10_162005) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "hole_performances", "holes"
+  add_foreign_key "hole_performances", "scorecards"
   add_foreign_key "scorecards", "courses"
   add_foreign_key "scorecards", "users"
 end

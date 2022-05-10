@@ -694,7 +694,7 @@ User.create(
   last_name: "McSpruce",
   username: "Sprucey",
   email: "psprucey@gmail.com",
-  user_type_id: 3,
+  user_type_id: 1,
   home_course_id: 1,
   handicap: 18,
   street_address: "42 Wallaby way",
@@ -703,8 +703,36 @@ User.create(
   postal_code: "33701",
 )
 
+User.create(
+  first_name: "Carl",
+  last_name: "Spackler",
+  username: "XTRMIN8R", # spelled weird to allow someone else to have proper spelling
+  email: "CdyShack@nil.com",
+  user_type_id: 2,
+  home_course_id: 1,
+  handicap: 3,
+  street_address: "42 Wallaby way",
+  address_locality: "St. Petersburg",
+  address_region: "Florida",
+  postal_code: "33701",
+)
+
 @users = User.all
 puts "Buying Golf Clubs for #{@users.all.count} users" unless @users.length < 2
 puts "Buying Golf Clubs for #{@users.all.count} user" if @users.length < 2
+
+UserType.create(
+  code: "user",
+  name: "user"
+)
+UserType.create(
+  code: "mgr",
+  name: "Course Manager"
+)
+UserType.create(
+  code: "spt",
+  name: "Support"
+)
+
 
 puts "Grass and DB are fully seeded!"

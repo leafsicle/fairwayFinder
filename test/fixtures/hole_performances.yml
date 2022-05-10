@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  strokes: 1
+  greenside_bunker_count: 1
+  fairway_bunker_count: 1
+  out_of_bounds_penalty: 1
+  penalty_stroke_count: 1
+  drop_penalty: 1
+  putts: 1
+  scorecard: one
+  hole: one
+
+two:
+  strokes: 1
+  greenside_bunker_count: 1
+  fairway_bunker_count: 1
+  out_of_bounds_penalty: 1
+  penalty_stroke_count: 1
+  drop_penalty: 1
+  putts: 1
+  scorecard: two
+  hole: two
