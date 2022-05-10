@@ -7,7 +7,7 @@ class Hole < ApplicationRecord
   validates :forward_tee_distance, presence: true, numericality: { in: 30..600 }
   validates :mid_tee_distance, presence: true, numericality: { in: 30..600 }
   validates :long_tee_distance, presence: true, numericality: { in: 30..600 }
-  validates :center_green_lat, numericality: true
-  validates :center_green_long, numericality: true
+  validates :latitude, numericality: true
+  validates :longitude, numericality: true
 
 end

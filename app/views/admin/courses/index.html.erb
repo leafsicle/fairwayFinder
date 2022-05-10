@@ -1,12 +1,19 @@
-<p style="color: green"><%= notice %></p>
-<h1>Courses</h1>
-<div id="courses">
-  <% @courses.each do |course| %>
-    <p>
-      <%= link_to course.course_name, [:admin, course] %> - <%= course.hole_count%> holes 
-      <br/>
-      Par <%=course.course_par%>
-    </p>
-  <% end %>
-</div>
-<%= link_to "New course", new_admin_course_path %>
+<main class="container">
+  <p style="color: green"><%= notice %></p>
+  <h1 class="" >Courses</h1>
+  <div id="courses">
+    <% @courses.each do |course| %>
+      <dl class="">
+        <dt>
+          <%= link_to course.course_name, [:admin, course] %>
+        </dt>
+        <dd>
+          <%= course.hole_count%> hole
+          Par <%=course.course_par%>
+        </dd>
+        <hr/>
+      </dl>
+    <% end %>
+  </div>
+  <%= link_to "New course", new_admin_course_path %>
+</main>

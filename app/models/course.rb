@@ -21,5 +21,5 @@ class Course < ApplicationRecord
   end
 
   geocoded_by :address
-  after_validation :geocode
+  after_validation :geocode, :course_par, :address
 end
