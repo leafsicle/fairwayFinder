@@ -3,17 +3,17 @@
     <%= course.course_name %>
     <%= link_to_image("edit_icon.svg", edit_admin_course_path(@course))%>
   </h2>
-  <%= link_to "Course Website", course.website_url %>
+  <%=  link_to "Course Website", course .website_url %>
   <p>
-    <%= link_to course.hole_count.to_s+" holes", admin_holes_path %> - Par <%=course.course_par%>
-    <%
-=begin%>
-    for each hole up to hole_count, tell the admin how many holes 
-    that are missing and offer a way to edit a specific hole or 
-    continually ask for the next hole information OR to save the current holes and pause for now.
-    I don't think that I want to make them 
-    <%
-=end%>
+    <% if course.holes.any? %>
+      <%= link_to course.hole_count.to_s+" holes", admin_holes_path %>
+    <%end%>
+    <%# From the course:id partial screen I want to be able to
+        show how many holes 
+    %>
+    <% if (course.holes.any? && course.hole.count == course.hole_count)%>
+      - Par <%=course.course_par%>
+    <%end%>
   </p>
   <p>
     <%= course.hour_open %>am to <%= course.hour_close %>pm
