@@ -41,6 +41,9 @@ Course.create!(
   fourth_tee_rating: 71.3,
   fifth_tee_slope: 116,
   fifth_tee_rating: 71.3,
+  latitude: 27.83347,
+  longitude: -82.62764,
+  rating: 
   created_at: Time.now,
   updated_at: Time.now,
 )
@@ -83,6 +86,8 @@ Course.create!(
   fourth_tee_rating: 73.1,
   fifth_tee_slope: 142,
   fifth_tee_rating: 75.9,
+  latitude: 28.114430813784118, 
+  longitude: -82.75315097511346,
   created_at: Time.now,
   updated_at: Time.now,
 )

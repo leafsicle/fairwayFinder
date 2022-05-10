@@ -17,10 +17,9 @@ class Course < ApplicationRecord
   end
 
   def address
-    [street_address, address_locality, address_region, "USA" ].compact.join(', ')
+    [street_address, address_locality, address_region, postal_code ].compact.join(', ')
   end
 
   geocoded_by :address
   after_validation :geocode
-
 end

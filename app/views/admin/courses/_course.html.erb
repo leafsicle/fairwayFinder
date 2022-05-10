@@ -1,7 +1,8 @@
 <div id="<%= dom_id course %>">
   <h2 title="Links externally to course websitle" class ="primary">
-    <%= link_to course.course_name, course.website_url %>
+    <%= course.course_name %>
   </h2>
+  <%= link_to "Course Website", course.website_url %>
   <p>
     <%= link_to course.hole_count.to_s+" holes", admin_holes_path %> - Par <%=course.course_par%>
     <%
