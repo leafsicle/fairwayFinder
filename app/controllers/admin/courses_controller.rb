@@ -21,7 +21,7 @@ module Admin
     # GET /courses/new
     def new
       @course = Course.new
-    endc
+    end
 
     # GET /courses/1/edit
     def edit

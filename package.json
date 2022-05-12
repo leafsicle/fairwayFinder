@@ -1,11 +1,16 @@
 {
   "name": "app",
   "private": "true",
+  "cacheDirectories": [
+    "client/node_modules"
+  ],
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "npm run build && npm run deploy",
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds && cd client && npm run build && cd ..",
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
-  "dependencies": {  
+  "dependencies": {   
     "@hotwired/stimulus": "^3.0.1",  
     "@hotwired/turbo-rails": "^7.1.0",  
     "@popperjs/core": "^2.11.0",  
