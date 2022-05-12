@@ -1,7 +1,8 @@
 class Hole < ApplicationRecord
   belongs_to :course, foreign_key: 'course_id'
-
-  validates :hole_number, presence: true, numericality: true
+  has_many :hole_performances
+  
+  validates :hole_number, presence: true, numericality: { in: 1..18 }, uniqueness: true
   validates :par_value, presence: true, numericality: { in: 3..8 }
   validates :course_hcap_val, presence: true, numericality: { in: 1..18 }
   validates :forward_tee_distance, presence: true, numericality: { in: 30..600 }
@@ -9,5 +10,4 @@ class Hole < ApplicationRecord
   validates :long_tee_distance, presence: true, numericality: { in: 30..600 }
   validates :latitude, numericality: true
   validates :longitude, numericality: true
-
 end

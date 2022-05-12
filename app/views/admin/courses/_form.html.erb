@@ -21,11 +21,6 @@
     <div>
       <%= form.label "Is this a members only Course?", style: "display: block" %>
       <%= form.check_box :membership %>
-      <%
-  =begin%>
-      TODO: turn this into a 'yes' 'no' select for clarity
-      <%
-  =end%>
     </div>
     <div>
       <%= form.label :phone, style: "display: block" %>
@@ -38,11 +33,6 @@
     <div>
       <%= form.label :hour_open, style: "display: block" %>
       <%= form.number_field :hour_open,min: 0, max:23 %>
-      <%
-  =begin%>
-      time_field should be used on these two^V
-      <%
-  =end%>
     </div>
     <div>
       <%= form.label :hour_close, style: "display: block" %>

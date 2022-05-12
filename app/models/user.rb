@@ -16,5 +16,3 @@ class User < ApplicationRecord
     p "I'm sorry we are letting you go"
   end
 end
-
-rails g model CourseEmployeeUser

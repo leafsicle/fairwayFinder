@@ -8,8 +8,11 @@
           <%= link_to course.course_name, [:admin, course] %>
         </dt>
         <dd>
-          <%= course.hole_count%> hole
-          Par <%=course.course_par%>
+          <%= course.holes.count%> /
+          <%= course.hole_count%> holes added | 
+          <% if course.holes.any? %>
+            Par <%=course.course_par%>
+          <% end %>
         </dd>
         <hr/>
       </dl>

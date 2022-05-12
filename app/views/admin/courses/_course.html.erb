@@ -1,7 +1,7 @@
 <div id="<%= dom_id course %>">
   <h2 title="Links externally to course websitle" class ="primary">
     <%= course.course_name %>
-    <%= link_to_image("edit_icon.svg", edit_admin_course_path(@course))%>
+    <%= link_to_image("edit_icon.svg", edit_admin_course_path(@course), {title: 'Edit this course'})%>
   </h2>
   <%=  link_to "Course Website", course .website_url %>
   <p>
@@ -11,8 +11,10 @@
     <%# From the course:id partial screen I want to be able to
         show how many holes 
     %>
-    <% if (course.holes.any? && course.hole.count == course.hole_count)%>
-      - Par <%=course.course_par%>
+    <% if (course.holes.empty? || (course.hole.count < course.hole_count))%>
+      <%= link_to "add hole ", new_admin_hole_path %>
+    <%end%>
+    <% if course.holes.count ==18  %> - Par <%=course.course_par  %>
     <%end%>
   </p>
   <p>
@@ -52,7 +54,7 @@
       </li>
     <%end%>
     <% if course.practice_bunker? %>
-      <li>
+      <li>rail
         Practice Bunker
       </li>
     <%end%>

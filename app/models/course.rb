@@ -12,6 +12,11 @@ class Course < ApplicationRecord
   validates :address_region, presence: true
   validates :postal_code, presence: true
   
+  # work on activation stuff later
+  # def deactivate
+  #   course.active? 
+  # end
+
   def course_par
     holes.reduce(0) { |sum, hole| sum + hole.par_value }
   end
@@ -19,6 +24,8 @@ class Course < ApplicationRecord
   def address
     [street_address, address_locality, address_region, postal_code ].compact.join(', ')
   end
+
+
 
   geocoded_by :address
   after_validation :geocode, :course_par, :address
