@@ -15,11 +15,11 @@ const CourseList = () => {
   return (
     <>
     <h5>Course list!</h5>
-      <ul>
+      <section>
       {courses?.map(course => {
-        return <li key={course.id}>{course.course_name}</li> 
+        return <p key={course.id}>{course.course_name}</p>
       })}
-      </ul>
+      </section>
     </>
   )
 }
