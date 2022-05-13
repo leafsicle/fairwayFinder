@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 
 
@@ -5,9 +6,8 @@ const CourseList = () => {
   const [courses, setCourses] = useState();
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:3001/api/courses/index`)
-    .then(response=>response.json())
-    .then(course => setCourses(course))
+    axios.get(`/api/courses/index`)
+    .then(courses => setCourses(courses.data))
   }, []);
 
 
