@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-
+import CourseCard from './CourseCard';
 
 const CourseList = () => {
   const [courses, setCourses] = useState();
@@ -10,14 +10,12 @@ const CourseList = () => {
     .then(courses => setCourses(courses.data))
   }, []);
 
-
-
   return (
     <>
     <h5>Course list!</h5>
       <section>
       {courses?.map(course => {
-        return <p key={course.id}>{course.course_name}</p>
+        return <CourseCard key={course.id} props={course}></CourseCard>
       })}
       </section>
     </>
