@@ -4,7 +4,7 @@ class Scorecard < ApplicationRecord
   has_many :hole_performance
 
   validates :user, presence: true
-  validates :course, presence: true
+  validates :course_id, presence: true
   validates :hole_performance, presence: true
 end
 
