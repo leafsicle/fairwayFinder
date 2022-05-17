@@ -10,9 +10,9 @@ class HolePerformance < ApplicationRecord
   validates :out_of_bounds_penalty, presence: true, length: { in: 0..12 }
   validates :penalty_stroke_count, presence: true, length: { in: 0..12 }
 
-  @stroke_count = 0
+  @total_stroke_count = 0
   def count_strokes
-    @stroke_count = :strokes + 
+    @total_stroke_count = :strokes + 
     :greenside_bunker_count + 
     :fairway_bunker_count + 
     :water_penalty_count + 

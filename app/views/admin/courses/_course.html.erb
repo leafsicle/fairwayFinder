@@ -11,7 +11,7 @@
     <%# From the course:id partial screen I want to be able to
         show how many holes 
     %>
-    <% if (course.holes.empty? || (course.hole.count < course.hole_count))%>
+    <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
       <%= link_to "add hole ", new_admin_hole_path %>
     <%end%>
     <% if course.holes.count ==18  %> - Par <%=course.course_par  %>

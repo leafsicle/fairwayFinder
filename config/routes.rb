@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
-    root to: "courses#index"
-    get 'courses/index'
+    get '/courses/', to:"courses#index"
   end
   namespace :admin do
     resources :holes
