@@ -10,7 +10,7 @@
     </div>
   <% end %>
   <div>
-    <%= form.label :course_id, style: "display: block" %>
+    <%= form.label :course_hole_count, style: "display: block" %>
     <%=form.collection_select( :course_id, Course.all, :id, :course_name, prompt:true)%>
   </div>
   <div>
@@ -23,7 +23,7 @@
   </div>
   <div>
     <%= form.label :course_hcap_val, style: "display: block" %>
-    <%= form.number_field :course_hcap_val,min:1, max:18 %>
+    <%= form.number_field :course_hcap_val,min:1, max: :course_hole_count %>
   </div>
   <div>
     <%= form.label :center_green_lat, style: "display: block" %>

@@ -3,7 +3,7 @@
   <h1 class="" >Courses</h1>
   <div id="courses">
     <% @courses.each do |course| %>
-      <dl class="">
+      <dl>
         <dt>
           <%= link_to course.course_name, [:admin, course] %>
         </dt>

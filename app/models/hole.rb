@@ -8,6 +8,8 @@ class Hole < ApplicationRecord
   validates :forward_tee_distance, presence: true, numericality: { in: 30..600 }
   validates :mid_tee_distance, presence: true, numericality: { in: 30..600 }
   validates :long_tee_distance, presence: true, numericality: { in: 30..600 }
-  validates :latitude, numericality: true
-  validates :longitude, numericality: true
+
+  def course_hole_count
+    p hole.course.hole_count
+  end
 end
