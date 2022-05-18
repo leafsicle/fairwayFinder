@@ -1,8 +1,7 @@
 module Admin
   class HolesController < ApplicationController
-    before_action :set_course, only: %i[ index show edit update destroy ]
-    before_action :set_hole, only: %i[ show update destroy ]
-
+    before_action :get_course, only: %i[ index edit show new create ]
+    before_action :set_hole, only: %i[ edit show update destroy ]
 
     # GET /holes or /holes.json
     def index
@@ -20,7 +19,6 @@ module Admin
 
     # GET /holes/1/edit
     def edit
-
     end
 
     # POST /holes or /holes.json
@@ -42,7 +40,7 @@ module Admin
     def update
       respond_to do |format|
         if @hole.update(hole_params)
-          format.html { redirect_to admin_course_holes_url(@course), notice: "Hole was successfully updated." }
+          format.html { redirect_to admin_course_holes_path(@course), notice: "Hole was successfully updated." }
           format.json { render :show, status: :ok, location: @course }
         else
           format.html { render :edit, status: :unprocessable_entity }
@@ -67,13 +65,13 @@ module Admin
       @hole = @course.holes.find(params[:id])
     end
 
-    def set_course
+    def get_course
       @course = Course.find(params[:course_id])
     end
 
     # Only allow a list of trusted parameters through.
     def hole_params
-      params.require(:hole).permit(:hole_number, :course_id, :par_value, :course_hcap_val, :center_of_green, :forward_tee_distance, :mid_tee_distance, :long_tee_distance, :fourth_tee_distance, :fifth_tee_distance, :course_id)
+      params.require(:hole).permit(@course.id,:hole_number, :course_id, :par_value, :course_hcap_val, :center_of_green, :forward_tee_distance, :mid_tee_distance, :long_tee_distance, :fourth_tee_distance, :fifth_tee_distance)
     end
   end
 end

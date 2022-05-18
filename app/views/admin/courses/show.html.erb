@@ -1,8 +1,8 @@
-<main class="">
+<main>
   <p style="color: green"><%= notice %></p>
   <%= render @course %>
   <aside>
-    <%= link_to "Back to courses", admin_courses_path %>
+    <%= link_to "Back to courses", admin_courses_path %> | 
     <%= link_to "Destroy this course", [:admin, @course], method: :delete, data: { confirm: 'Are you sure you want to delete a hole Golf course?'} %>
   </aside>
 </main>

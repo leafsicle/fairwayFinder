@@ -25,7 +25,15 @@ class Course < ApplicationRecord
     [street_address, address_locality, address_region, postal_code ].compact.join(', ')
   end
 
-
+  def remaining_holes
+    hole_arr = []
+    holes.each do |hole|
+      unless hole.hole_number.nil? 
+        hole_arr << hole.hole_number
+      end
+    end
+    hole_arr.sort!
+  end
 
   geocoded_by :address
   after_validation :geocode, :course_par, :address
