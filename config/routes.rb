@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
   namespace :api do
     get '/courses/', to:"courses#index"
+    
   end
   namespace :admin do
-    resources :holes
-    resources :courses
-    resources :users
-    resources :scorecards
+    resources :courses do
+      resources :holes
+    end
+    resources :users do
+      resources :scorecards
+    end
   end 
 
   if Rails.env.production?

@@ -1,8 +1,10 @@
-<div class="container">
-  <h1>New hole</h1>
+<div class="">
+  <h1>Adding new hole to
+    <%= @course.course_name%>
+  </h1>
   <%= render "form", hole: @hole %>
   <br>
   <div>
-    <%= link_to "Back to holes", admin_holes_path %>
+    <%= link_to "View all holes", admin_course_holes_path(@course) %>
   </div>
 </div>

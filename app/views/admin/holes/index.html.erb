@@ -1,18 +1,21 @@
 <p style="color: green"><%= notice %></p>
-<h1 class ="bg:green">Holes by course</h1>
-<% unless @holes.count > 18%>
-  <li>
-    <button class = "btn btn-md">
-      <%= button_to "Add a new hole", new_admin_hole_path %>
+<h1 class ="bg:green">
+  <%= @course.course_name%>
+</h1>
+<nav class="my-3">
+  <% if @course.holes.count < 18%>
+    <button class="btn btn-md rounded" >
+      <%= link_to "Add a new hole", new_admin_course_hole_path %>
     </button>
   <% end %>
-  <button class="btn btn-dark " >
-    <%= link_to "See All courses", admin_courses_path %>
-  </button>
-  <ul id="holes" class="list-group">
-    <% @holes.each do |hole| %>
-      <li class ="list-group-item">
-        <%= render hole %>
-      </li>
-    <% end %>
-  </ul>
+</nav>
+<ul id="holes" class="list-group">
+  <% @course.holes.each do |hole| %>
+    <li class ="list-group-item m-3 rounded">
+      <%= render hole %>
+    </li>
+  <% end %>
+</ul>
+<button class="btn btn-md rounded" >
+  <%= link_to "Back to All courses", admin_courses_url %>
+</button>

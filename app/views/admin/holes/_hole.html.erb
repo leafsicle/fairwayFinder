@@ -1,27 +1,33 @@
 <div id="<%= dom_id hole %>">
-  <%# this partial represents what is seen from a course perspective %>
+  <%# this partial represents what is seen from a course/id/holes perspective %>
   <h5>
-    <%= link_to "#{hole.course.course_name} Hole #{hole.hole_number}", admin_hole_path(hole) %>
+    <%= link_to "Hole #{hole.hole_number}", edit_admin_course_hole_path(@course,hole)%>
   </h5>
-  <b>Par</b>
-  <%= hole.par_value %>
-  <b>HCAP</b>
-  <%= hole.course_hcap_val %>
-  <p>
-    <% if hole.forward_tee_distance %>
-      <%= hole.forward_tee_distance %> yds  |
-    <%end%>
-    <% if hole.mid_tee_distance %>
-      <%= hole.mid_tee_distance %> yds |
-    <%end%>
-    <% if hole.long_tee_distance %>
-      <%= hole.long_tee_distance %> yds
-    <%end%>
-    <% if hole.fourth_tee_distance %>
-      |  <%= hole.fourth_tee_distance %> yds
-    <%end%>
-    <% if hole.fifth_tee_distance %>
-      | <%= hole.fifth_tee_distance %> yds
-    <%end%>
-  </p>
+  <span>
+    <b>Par</b>
+    <%= hole.par_value %>
+  </span>
+  <span>
+    <b>HCAP</b>
+    <%= hole.course_hcap_val %>
+  </span>
+  <details class="mt-1">
+    <p>
+      <% if hole.forward_tee_distance %>
+        <%= hole.forward_tee_distance %> yds  |
+      <%end%>
+      <% if hole.mid_tee_distance %>
+        <%= hole.mid_tee_distance %> yds |
+      <%end%>
+      <% if hole.long_tee_distance %>
+        <%= hole.long_tee_distance %> yds
+      <%end%>
+      <% if hole.fourth_tee_distance %>
+        |  <%= hole.fourth_tee_distance %> yds
+      <%end%>
+      <% if hole.fifth_tee_distance %>
+        | <%= hole.fifth_tee_distance %> yds
+      <%end%>
+    </p>
+  </details>
 </div>

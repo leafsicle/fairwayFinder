@@ -2,7 +2,7 @@ class Api::CoursesController < ApplicationController
   before_action :set_course, only: %i[ show ]
 
   def index
-    @courses = Course.all
+    @courses= Course.all
     render json: @courses.map { |course|
       {
         id: course.id,
@@ -60,8 +60,8 @@ class Api::CoursesController < ApplicationController
   end
 
   def show
-    @courses = Course.find(id)
-    render json: @courses.map { |course|
+    @course = Course.find(id)
+    render json:
       {
         id: course.id,
         course_name: course.course_name,
