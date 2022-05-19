@@ -7,6 +7,7 @@ class Hole < ApplicationRecord
   validates :course_hcap_val, presence: true, numericality: { in: 1..18 }
   validates :forward_tee_distance, presence: true, numericality: { in: 30..600 }
   validates :mid_tee_distance, presence: true, numericality: { in: 30..600 }
-  validates :long_tee_distance, presence: true, numericality: { in: 30..600 }
-
+  validates :long_tee_distance, numericality: { in: 30..600 }
+  validates :fourth_tee_distance, numericality: { in: 30..600 }
+  validates :fifth_tee_distance, numericality: { in: 30..600 }
 end

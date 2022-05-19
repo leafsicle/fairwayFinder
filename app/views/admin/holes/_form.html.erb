@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin_course, @hole]) do |form| %>
+<%= form_with(model: [:admin, @course, @hole]) do |form| %>
   <% if hole.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(hole.errors.count, "error") %> prohibited this hole from being saved:</h2>
