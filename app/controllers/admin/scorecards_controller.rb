@@ -1,5 +1,6 @@
 module Admin
   class ScorecardsController < ApplicationController
+    before_action :get_user
     before_action :set_scorecard, only: %i[ show edit update destroy ]
 
     # GET /scorecards or /scorecards.json
@@ -63,6 +64,10 @@ module Admin
       def set_scorecard
         @scorecard = Scorecard.find(params[:id])
       end
+
+    def get_user
+      @user = User.find(params[:user_id])
+    end
 
       # Only allow a list of trusted parameters through.
       def scorecard_params

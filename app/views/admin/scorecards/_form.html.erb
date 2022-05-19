@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin, scorecard]) do |form| %>
+<%= form_with(model: [:admin, @user, @scorecard]) do |form| %>
   <% if scorecard.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(scorecard.errors.count, "error") %> prohibited this scorecard from being saved:</h2>

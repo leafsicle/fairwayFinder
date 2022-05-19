@@ -21,4 +21,10 @@
       <%= user.postal_code %>
     </address>
   </details>
+  <details>
+    <summary>User Actions</summary>
+    <%= button_to "Start a round", new_admin_user_scorecard_url(user), method: :get,  %>
+    <button class=" btn disabled">See list of previous rounds.</button>
+    <%# <%= button_to "show previous rounds", new_admin_user_scorecard_url(user), method: :get %>
+  </details>
 </div>
