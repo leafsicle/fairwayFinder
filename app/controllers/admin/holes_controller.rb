@@ -5,7 +5,7 @@ module Admin
 
     # GET /holes or /holes.json
     def index
-      @holes = @course.holes
+      @holes = @course.holes.order('hole_number ASC')
     end
 
     # GET /holes/1 or /holes/1.json

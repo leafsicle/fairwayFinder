@@ -1,12 +1,12 @@
 <div id="<%= dom_id course %>">
-  <h2 title="Links externally to course websitle" class ="primary">
+  <h2 title="Links externally to course website" class ="primary">
     <%= course.course_name %>
     <%= link_to_image("edit_icon.svg", edit_admin_course_path(@course), {title: 'Edit this course'})%>
   </h2>
   <%=  link_to "Course Website", course.website_url %>
   <p>
     <% if course.holes.any? %>
-      <%= course.hole_count.to_s+" hole" %>
+      <%= course.hole_count.to_s+" holes" %>
     <% end %>
     <% if course.holes.count == course.hole_count %>
       - Par <%=course.course_par  %>
@@ -107,18 +107,16 @@
       <% end %>
     </ul>
   </details>
+  <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
+    <%= link_to "add hole ", new_admin_course_hole_path(@course)%>
+  <% end %>
   <% if course.holes.any? %>
-    <p>
-      <ul id="holes" class="list-group">
-        <% course.holes.map do |hole| %>
-          <li class ="list-group-item m-3 rounded">
-            <%= render hole %>
-          </li>
-        </ul>
-      </p>
-    <% end %>
-    <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
-      <%= link_to "add hole ", new_admin_course_hole_path(@course)%>
+    <ul id="holes" class="list-group">
+      <% course.holes.map do |hole| %>
+        <li class ="list-group-item m-3 rounded">
+          <%= render hole %>
+        </li>
+      </ul>
     <% end %>
   <% end %>
 </div>
