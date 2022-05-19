@@ -1,42 +1,24 @@
 <div id="<%= dom_id user %>">
-  <p>
-    <strong>First name:</strong>
-    <%= user.first_name %>
-  </p>
-  <p>
-    <strong>Last name:</strong>
-    <%= user.last_name %>
-  </p>
-  <p>
-    <strong>Username:</strong>
-    <%= user.username %>
-  </p>
-  <p>
-    <strong>Email:</strong>
-    <%= user.email %>
-  </p>
-  <p>
-    <strong>User type:</strong>
-    <%= user.user_type_id %>
-  </p>
-  <p>
-    <strong>Handicap:</strong>
-    <%= user.handicap %>
-  </p>
-  <p>
-    <strong>Street address:</strong>
-    <%= user.street_address %>
-  </p>
-  <p>
-    <strong>Address locality:</strong>
-    <%= user.address_locality %>
-  </p>
-  <p>
-    <strong>Address region:</strong>
-    <%= user.address_region %>
-  </p>
-  <p>
-    <strong>Postal:</strong>
-    <%= user.postal_code %>
-  </p>
+  <section class="d-flex justify-content-between mw">
+    <h5 class ="m-3">
+      <%= user.full_name %>
+    </h5>
+    <span class= "">
+      <%= link_to_image("edit_icon.svg", edit_admin_user_path(user), {title: 'Edit this user'})%>
+    </span>
+  </section>
+  <details>
+    <summary>User Details</summary>
+    Username: <%= user.username %>
+    <a href="email:<%= user.email %>">
+      <%= user.email %>
+    </a>
+    HCAP: <%= user.handicap %>
+    <address>
+      <%= user.street_address %> <br>
+      <%= user.address_locality %>,
+      <%= user.address_region %>
+      <%= user.postal_code %>
+    </address>
+  </details>
 </div>

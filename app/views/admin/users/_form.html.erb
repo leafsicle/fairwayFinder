@@ -1,4 +1,5 @@
 <%= form_with(model: [:admin, user]) do |form| %>
+  <h1>Editing User: <%= user.username %></h1>
   <% if user.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -26,7 +27,7 @@
     <%= form.text_field :email %>
   </div>
   <div>
-    <%= form.label :user_type_id, style: "display: block" %>
+    <%= form.label "Leave 3 for user Type id", style: "display: block" %>
     <%= form.number_field :user_type_id %>
   </div>
   <div>

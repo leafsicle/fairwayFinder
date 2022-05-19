@@ -15,4 +15,9 @@ class User < ApplicationRecord
   def demote_user_to_course_employee
     p "I'm sorry we are letting you go"
   end
+
+  def full_name
+      [first_name, last_name ].compact.join(' ')
+  end 
+
 end
