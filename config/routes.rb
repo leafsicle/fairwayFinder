@@ -4,11 +4,10 @@ Rails.application.routes.draw do
     
   end
   namespace :admin do
+    resources :users 
     resources :courses do
-      resources :holes
-    end
-    resources :users do
       resources :scorecards
+      resources :holes
     end
   end 
 

@@ -6,7 +6,7 @@
   <%=  link_to "Course Website", course.website_url %>
   <p>
     <% if course.holes.any? %>
-      <%= course.hole_count.to_s+" holes" %>
+      <%= course.holes.count.to_s + " / " + course.hole_count.to_s+" holes added" %>
     <% end %>
     <% if course.holes.count == course.hole_count %>
       - Par <%=course.course_par  %>
@@ -108,11 +108,13 @@
     </ul>
   </details>
   <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
-    <%= link_to "add hole ", new_admin_course_hole_path(@course)%>
+    <p style="width:45px;">
+      <%= link_to_image("add.svg", new_admin_course_hole_path(@course), {title: 'Add new hole to course'})%>
+    </p>
   <% end %>
   <% if course.holes.any? %>
     <ul id="holes" class="list-group">
-      <% course.holes.map do |hole| %>
+      <% course.holes.order(:hole_number).map do |hole| %>
         <li class ="list-group-item m-3 rounded">
           <%= render hole %>
         </li>
