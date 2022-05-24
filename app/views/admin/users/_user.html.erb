@@ -13,7 +13,9 @@
     <a href="email:<%= user.email %>">
       <%= user.email %>
     </a>
-    HCAP: <%= user.handicap %>
+    <p>
+      HCAP: <%= user.handicap %>
+    </p>
     <address>
       <%= user.street_address %> <br>
       <%= user.address_locality %>,
@@ -23,7 +25,9 @@
   </details>
   <details>
     <summary>User Actions</summary>
-    <%= button_to "Start a round", new_admin_user_scorecard_url(user), method: :get,  %>
+    <%# if the user has ANY rounds to display, enable the hisotry of showing all previous rounds %>
+    <%# <%= button_to "Start a round", new_admin_user_scorecard_url(), method: :get %>
+    <button class=" btn disabled">User stats?</button>
     <button class=" btn disabled">See list of previous rounds.</button>
     <%# <%= button_to "show previous rounds", new_admin_user_scorecard_url(user), method: :get %>
   </details>
