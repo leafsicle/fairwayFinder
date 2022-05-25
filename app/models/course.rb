@@ -35,6 +35,10 @@ class Course < ApplicationRecord
     hole_arr.sort!
   end
 
+  def playable?
+    holes.count == hole_count
+  end
+
   geocoded_by :address
   after_validation :geocode, :course_par, :address
 end

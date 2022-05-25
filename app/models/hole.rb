@@ -1,5 +1,6 @@
 class Hole < ApplicationRecord
   belongs_to :course
+  has_many :scorecards, through: :course
   has_many :hole_performances
   
   validates :hole_number, presence: true, numericality: { in: 1..18 }

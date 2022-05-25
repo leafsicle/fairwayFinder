@@ -13,41 +13,39 @@
   <%= form.number_field :hole_number,min:1, max:18 %>
   <%# <%=form.collection_select( :hole_number, @course.remaining_holes , :hole_number, :id, :hole_number)%>
   <%= @course.remaining_holes %>
-</div>
-<div>
-  <%= form.label :par_value, style: "display: block" %>
-  <%= form.number_field :par_value, min:2, max:6,value: 4 %>
-</div>
-<div>
-  <%= form.label :course_hcap_val, style: "display: block" %>
-  <%= form.number_field :course_hcap_val,min:1, max:18 %>
-</div>
-<div>
-  <%= form.label "Center of green", style: "display: block" %>
-  <p> Working to add GPS funcitonality soon! </p>
-</div>
-<div>
-  <%= form.label :forward_tee_distance, style: "display: block" %>
-  <%= form.number_field :forward_tee_distance %>
-</div>
-<div>
-  <%= form.label :mid_tee_distance, style: "display: block" %>
-  <%= form.number_field :mid_tee_distance %>
-</div>
-<div>
-  <%= form.label :long_tee_distance, style: "display: block" %>
-  <%= form.number_field :long_tee_distance %>
-</div>
-<div>
-  <%= form.label :fourth_tee_distance, style: "display: block" %>
-  <%= form.number_field :fourth_tee_distance %>
-</div>
-<div>
-  <%= form.label :fifth_tee_distance, style: "display: block" %>
-  <%= form.number_field :fifth_tee_distance %>
-</div>
-<div>
-  <%# <%= form.hidden_field :hole_id %>
-  <%= form.submit %>
-</div>
+  <div>
+    <%= form.label :par_value, style: "display: block" %>
+    <%= form.number_field :par_value, min:2, max:6,value: 4 %>
+  </div>
+  <div>
+    <%= form.label :course_hcap_val, style: "display: block" %>
+    <%= form.number_field :course_hcap_val,min:1, max:18 %>
+  </div>
+  <div>
+    <%= form.label "Center of green", style: "display: block" %>
+    <p> Working to add GPS funcitonality soon! </p>
+  </div>
+  <div>
+    <%= form.label :forward_tee_distance, style: "display: block" %>
+    <%= form.number_field :forward_tee_distance %>
+  </div>
+  <div>
+    <%= form.label :mid_tee_distance, style: "display: block" %>
+    <%= form.number_field :mid_tee_distance %>
+  </div>
+  <div>
+    <%= form.label :long_tee_distance, style: "display: block" %>
+    <%= form.number_field :long_tee_distance %>
+  </div>
+  <div>
+    <%= form.label :fourth_tee_distance, style: "display: block" %>
+    <%= form.number_field :fourth_tee_distance %>
+  </div>
+  <div>
+    <%= form.label :fifth_tee_distance, style: "display: block" %>
+    <%= form.number_field :fifth_tee_distance %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
 <% end %>

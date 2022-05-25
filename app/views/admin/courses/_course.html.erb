@@ -1,9 +1,16 @@
-<div id="<%= dom_id course %>">
-  <h2 title="Links externally to course website" class ="primary">
+<div id="<%= dom_id course %>" class="hole-cardz">
+  <h2>
     <%= course.course_name %>
     <%= link_to_image("edit_icon.svg", edit_admin_course_path(@course), {title: 'Edit this course'})%>
+    <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
+      <p style="width:25px;">
+        <%= link_to_image("add.svg", new_admin_course_hole_path(@course), {title: 'Add new hole to course'})%>
+      </p>
+    <% end %>
   </h2>
-  <%=  link_to "Course Website", course.website_url %>
+  <%=  link_to "Course Website", course.website_url %> | 
+  <%= link_to "Back to courses", admin_courses_path %> | 
+  <%= link_to "Destroy this course", admin_courses_path, method: :delete, data: { confirm: 'Are you sure you want to delete a hole Golf course?'} %>
   <p>
     <% if course.holes.any? %>
       <%= course.holes.count.to_s + " / " + course.hole_count.to_s+" holes added" %>
@@ -14,6 +21,10 @@
     <br>
     <%= course.hour_open %>am to <%= course.hour_close %>pm
   </p>
+  <% if course.playable? %>
+    <%# add a button here to start a round as the currently logged-in user %>
+    <%=  link_to " Quick Round  ", new_admin_course_scorecard_url(@course)%>
+  <% end %>
   <address class= "course-addr">
     <%= course.street_address %><br>
     <%= course.address_locality %><br>
@@ -107,15 +118,10 @@
       <% end %>
     </ul>
   </details>
-  <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
-    <p style="width:45px;">
-      <%= link_to_image("add.svg", new_admin_course_hole_path(@course), {title: 'Add new hole to course'})%>
-    </p>
-  <% end %>
   <% if course.holes.any? %>
-    <ul id="holes" class="list-group">
+    <ul id="holes" class="list-group ">
       <% course.holes.order(:hole_number).map do |hole| %>
-        <li class ="list-group-item m-3 rounded">
+        <li class ="list-group-item m-3 rounded mw-25">
           <%= render hole %>
         </li>
       </ul>

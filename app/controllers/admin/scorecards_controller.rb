@@ -1,6 +1,6 @@
 module Admin
   class ScorecardsController < ApplicationController
-    before_action :get_user
+    before_action :get_course
     before_action :set_scorecard, only: %i[ show edit update destroy ]
 
     # GET /scorecards or /scorecards.json
@@ -27,7 +27,7 @@ module Admin
 
       respond_to do |format|
         if @scorecard.save
-          format.html { redirect_to scorecard_url(@scorecard), notice: "Scorecard was successfully created." }
+          format.html { redirect_to admin_course_scorecards_url(@scorecard), notice: "Scorecard was successfully created." }
           format.json { render :show, status: :created, location: @scorecard }
         else
           format.html { render :new, status: :unprocessable_entity }
@@ -65,13 +65,13 @@ module Admin
         @scorecard = Scorecard.find(params[:id])
       end
 
-    def get_user
-      @user = User.find(params[:user_id])
+    def get_course
+      @course = Course.find(params[:course_id])
     end
 
       # Only allow a list of trusted parameters through.
       def scorecard_params
-        params.require(:scorecard).permit(:user_id)
+        params.require(:scorecard).permit(:course_id, :user_id)
       end 
   end
 end
