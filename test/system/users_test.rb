@@ -23,7 +23,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "Last name", with: @user.last_name
     fill_in "Postal", with: @user.postal
     fill_in "Street address", with: @user.street_address
-    fill_in "User type", with: @user.user_type_id
+    fill_in "User type", with: @user.user_type
     fill_in "Username", with: @user.username
     click_on "Create User"
 
@@ -44,7 +44,7 @@ class UsersTest < ApplicationSystemTestCase
     fill_in "Last name", with: @user.last_name
     fill_in "Postal", with: @user.postal
     fill_in "Street address", with: @user.street_address
-    fill_in "User type", with: @user.user_type_id
+    fill_in "User type", with: @user.user_type
     fill_in "Username", with: @user.username
     click_on "Update User"
 

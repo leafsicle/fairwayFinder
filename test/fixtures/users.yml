@@ -5,7 +5,6 @@ one:
   last_name: MyString
   username: MyString
   email: MyString
-  user_type_id: 1
   handicap: 1.5
   street_address: MyString
   address_locatity: MyString
@@ -18,7 +17,6 @@ two:
   last_name: MyString
   username: MyString
   email: MyString
-  user_type_id: 1
   handicap: 1.5
   street_address: MyString
   address_locatity: MyString

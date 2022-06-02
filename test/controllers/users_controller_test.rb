@@ -17,7 +17,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user" do
     assert_difference("User.count") do
-      post users_url, params: { user: { address_locatity: @user.address_locatity, address_region: @user.address_region, code: @user.code, email: @user.email, first_name: @user.first_name, handicap: @user.handicap, last_name: @user.last_name, postal: @user.postal, street_address: @user.street_address, user_type_id: @user.user_type_id, username: @user.username } }
+      post users_url, params: { user: { address_locatity: @user.address_locatity, address_region: @user.address_region, code: @user.code, email: @user.email, first_name: @user.first_name, handicap: @user.handicap, last_name: @user.last_name, postal: @user.postal, street_address: @user.street_address, user_type: @user.user_type, username: @user.username } }
     end
 
     assert_redirected_to user_url(User.last)
@@ -34,7 +34,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch user_url(@user), params: { user: { address_locatity: @user.address_locatity, address_region: @user.address_region, code: @user.code, email: @user.email, first_name: @user.first_name, handicap: @user.handicap, last_name: @user.last_name, postal: @user.postal, street_address: @user.street_address, user_type_id: @user.user_type_id, username: @user.username } }
+    patch user_url(@user), params: { user: { address_locatity: @user.address_locatity, address_region: @user.address_region, code: @user.code, email: @user.email, first_name: @user.first_name, handicap: @user.handicap, last_name: @user.last_name, postal: @user.postal, street_address: @user.street_address, user_type: @user.user_type, username: @user.username } }
     assert_redirected_to user_url(@user)
   end
 

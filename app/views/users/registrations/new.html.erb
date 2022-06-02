@@ -1,29 +1,55 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<h2>New user sign up</h2>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |form| %>
   <%= render "users/shared/error_messages", resource: resource %>
-
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= form.label :email %><br />
+    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
-
   <div class="field">
-    <%= f.label :password %>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= form.label :username, style: "display: block" %>
+    <%= form.text_field :username %>
+  </div>
+  <div class="field">
+    <%= form.label :handicap, style: "display: block" %>
+    <%= form.text_field :handicap %>
+  </div>
+  <div class="field">
+    <%= form.label "street Address", style: "display: block" %>
+    <%= form.text_field :street_address %>
+  </div>
+  <div class="field">
+    <%= form.label "City", style: "display: block" %>
+    <%= form.text_field :address_locality %>
+  </div>
+  <div class="field">
+    <%= form.label "State", style: "display: block" %>
+    <%= form.text_field :address_region %>
+  </div>
+  <div class="field">
+    <%= form.label "Zip code", style: "display: block" %>
+    <%= form.text_field :postal_code %>
+  </div>
+  <div class="field">
+    <%= form.label :password %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= form.password_field :password, autocomplete: "new-password" %>
   </div>
-
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= form.label :password_confirmation %><br />
+    <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= form.submit "Sign up" %>
   </div>
 <% end %>
-
 <%= render "users/shared/links" %>

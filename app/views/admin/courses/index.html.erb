@@ -3,7 +3,13 @@
   <h1 class="">Manage Courses</h1>
   <section class="d-flex justify-content-between my-3">
     <%= link_to "New course", new_admin_course_path %>
-    <%# <%= link_to "Manage Users", admin_users_path%>
+    <% unless user_signed_in? %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      <%= link_to "Sign In", new_user_session_path %>
+    <% end %>
+    <% if user_signed_in? %>
+      <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <% end %>
   </section>
   <div id="courses">
     <% @courses.each do |course| %>
