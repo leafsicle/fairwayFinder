@@ -638,7 +638,6 @@ puts "If you were wondering that is a combined #{@holes.sum (:fifth_tee_distance
 #   last_name: "Cooke",
 #   username: "Leafsicle",
 #   email: "cookem529@gmail.com",
-#   user_type_id: 3,
 #   home_course_id: 1,
 #   handicap: 18,
 #   street_address: "1600 Penn. Ave",
@@ -652,7 +651,6 @@ puts "If you were wondering that is a combined #{@holes.sum (:fifth_tee_distance
 #   last_name: "McSpruce",
 #   username: "Sprucey",
 #   email: "psprucey@gmail.com",
-#   user_type_id: 1,
 #   home_course_id: 1,
 #   handicap: 18,
 #   street_address: "42 Wallaby way",
@@ -667,7 +665,6 @@ puts "If you were wondering that is a combined #{@holes.sum (:fifth_tee_distance
 #   last_name: "Spackler",
 #   username: "XTRMIN8R", # spelled weird to allow someone else to have proper spelling
 #   email: "CdyShack@nil.com",
-#   user_type_id: 2,
 #   home_course_id: 1,
 #   handicap: 3,
 #   street_address: "42 Wallaby way",
