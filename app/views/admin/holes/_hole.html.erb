@@ -13,14 +13,14 @@
   </span>
   <details class="mt-1">
     <p>
-      <% if hole.forward_tee_distance %>
-        <%= hole.forward_tee_distance %> yds  |
+      <% if hole.first_tee_distance %>
+        <%= hole.first_tee_distance %> yds  |
       <%end%>
-      <% if hole.mid_tee_distance %>
-        <%= hole.mid_tee_distance %> yds |
+      <% if hole.second_tee_distance %>
+        <%= hole.second_tee_distance %> yds |
       <%end%>
-      <% if hole.long_tee_distance %>
-        <%= hole.long_tee_distance %> yds
+      <% if hole.third_tee_distance %>
+        <%= hole.third_tee_distance %> yds
       <%end%>
       <% if hole.fourth_tee_distance %>
         |  <%= hole.fourth_tee_distance %> yds

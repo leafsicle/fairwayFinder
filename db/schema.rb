@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_17_150957) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_150052) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -45,12 +45,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_150957) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "course_name"
-    t.integer "forward_tee_slope"
-    t.float "forward_tee_rating"
-    t.integer "mid_tee_slope"
-    t.float "mid_tee_rating"
-    t.integer "long_tee_slope"
-    t.float "long_tee_rating"
+    t.integer "first_tee_slope"
+    t.float "first_tee_rating"
+    t.integer "second_tee_slope"
+    t.float "second_tee_rating"
+    t.integer "third_tee_slope"
+    t.float "third_tee_rating"
     t.integer "fourth_tee_slope"
     t.float "fourth_tee_rating"
     t.integer "fifth_tee_slope"
@@ -80,9 +80,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_150957) do
     t.integer "hole_number"
     t.integer "par_value"
     t.integer "course_hcap_val"
-    t.integer "forward_tee_distance"
-    t.integer "mid_tee_distance"
-    t.integer "long_tee_distance"
+    t.integer "first_tee_distance"
+    t.integer "second_tee_distance"
+    t.integer "third_tee_distance"
     t.integer "fourth_tee_distance"
     t.integer "fifth_tee_distance"
     t.bigint "course_id", null: false
@@ -125,6 +125,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_17_150957) do
     t.datetime "updated_at", null: false
     t.decimal "latitude"
     t.decimal "longitude"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "hole_performances", "holes"

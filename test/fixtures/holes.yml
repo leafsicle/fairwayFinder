@@ -5,10 +5,10 @@ one:
   course_id: 1
   par_value: 1
   course_hcap_val: 1
-  center_of_green: 
-  forward_tee_distance: 1
-  mid_tee_distance: 1
-  long_tee_distance: 1
+  center_of_green:
+  first_tee_distance: 1
+  second_tee_distance: 1
+  third_tee_distance: 1
   fourth_tee_distance: 1
   fifth_tee_distance: 1
   course: one
@@ -18,10 +18,10 @@ two:
   course_id: 1
   par_value: 1
   course_hcap_val: 1
-  center_of_green: 
-  forward_tee_distance: 1
-  mid_tee_distance: 1
-  long_tee_distance: 1
+  center_of_green:
+  first_tee_distance: 1
+  second_tee_distance: 1
+  third_tee_distance: 1
   fourth_tee_distance: 1
   fifth_tee_distance: 1
   course: two

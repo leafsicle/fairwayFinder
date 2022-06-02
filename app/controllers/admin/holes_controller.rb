@@ -5,7 +5,7 @@ module Admin
 
     # GET /holes or /holes.json
     def index
-      @holes = @course.holes.order('hole_number ASC')
+      @holes = @course.holes.order("hole_number ASC")
     end
 
     # GET /holes/1 or /holes/1.json
@@ -13,7 +13,7 @@ module Admin
     end
 
     # GET /holes/new
-    def new 
+    def new
       @hole = @course.holes.build
     end
 
@@ -60,6 +60,7 @@ module Admin
     end
 
     private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_hole
       @hole = @course.holes.find(params[:id])
@@ -71,7 +72,7 @@ module Admin
 
     # Only allow a list of trusted parameters through.
     def hole_params
-      params.require(:hole).permit(:hole_number, :course_id, :par_value, :course_hcap_val, :center_of_green, :forward_tee_distance, :mid_tee_distance, :long_tee_distance, :fourth_tee_distance, :fifth_tee_distance)
+      params.require(:hole).permit(:hole_number, :course_id, :par_value, :course_hcap_val, :center_of_green, :first_tee_distance, :second_tee_distance, :third_tee_distance, :fourth_tee_distance, :fifth_tee_distance)
     end
   end
 end

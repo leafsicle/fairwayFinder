@@ -18,11 +18,11 @@ class HolesTest < ApplicationSystemTestCase
     fill_in "Course hcap val", with: @hole.course_hcap_val
     fill_in "Course", with: @hole.course_id
     fill_in "Fifth tee distance", with: @hole.fifth_tee_distance
-    fill_in "Forward tee distance", with: @hole.forward_tee_distance
+    fill_in "Forward tee distance", with: @hole.first_tee_distance
     fill_in "Fourth tee distance", with: @hole.fourth_tee_distance
     fill_in "Hole number", with: @hole.hole_number
-    fill_in "Long tee distance", with: @hole.long_tee_distance
-    fill_in "Mid tee distance", with: @hole.mid_tee_distance
+    fill_in "Long tee distance", with: @hole.third_tee_distance
+    fill_in "Mid tee distance", with: @hole.second_tee_distance
     fill_in "Par value", with: @hole.par_value
     click_on "Create Hole"
 
@@ -38,11 +38,11 @@ class HolesTest < ApplicationSystemTestCase
     fill_in "Course hcap val", with: @hole.course_hcap_val
     fill_in "Course", with: @hole.course_id
     fill_in "Fifth tee distance", with: @hole.fifth_tee_distance
-    fill_in "Forward tee distance", with: @hole.forward_tee_distance
+    fill_in "Forward tee distance", with: @hole.first_tee_distance
     fill_in "Fourth tee distance", with: @hole.fourth_tee_distance
     fill_in "Hole number", with: @hole.hole_number
-    fill_in "Long tee distance", with: @hole.long_tee_distance
-    fill_in "Mid tee distance", with: @hole.mid_tee_distance
+    fill_in "Long tee distance", with: @hole.third_tee_distance
+    fill_in "Mid tee distance", with: @hole.second_tee_distance
     fill_in "Par value", with: @hole.par_value
     click_on "Update Hole"
 

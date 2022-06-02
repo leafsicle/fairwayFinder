@@ -84,3 +84,6 @@ gem "awesome_print", "~> 1.9"
 gem "geocoder", "~> 1.7"
 
 gem "rack-cors", "~> 1.1"
+
+gem "devise", "~> 4.8", ">= 4.8.1"
+gem "omniauth", "~> 2.1"
