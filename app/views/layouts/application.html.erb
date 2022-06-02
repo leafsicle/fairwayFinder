@@ -12,7 +12,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body class="container">
-    <p class="notice"><%= notice %></p>
+    <%# <p class="notice"><%= notice %+></p> This was causing a double alert at the top of the screen %>
     <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
