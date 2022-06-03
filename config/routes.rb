@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   end
 
   root to: "admin/courses#index"
-  devise_for :users
+
+  devise_for :users, controllers: { sessions: "users/sessions",
+                                    omniauth_callbacks: "users/omniauth_callbacks", registrations: "users/registrations" }
 
   if Rails.env.production?
     CLIENT_HTML = FILE.read(Rails.root.join("public/index.html"))

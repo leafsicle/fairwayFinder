@@ -4,10 +4,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     added_attrs = [:name, :email, :password_confirmation, :remember_me]
-    sign_up_attrs = [:email, :password_confirmation, :remember_me, :first_name, :last_name, :username, :user_type, :handicap, :street_address, :address_locality, :address_region, :postal_code]
+    sign_up_attrs = [:email, :avatar, { roles: [] }, :password_confirmation, :remember_me, :first_name, :last_name, :username, :handicap, :street_address, :address_locality, :address_region, :postal_code]
     devise_parameter_sanitizer.permit :sign_up, keys: sign_up_attrs
     devise_parameter_sanitizer.permit :sign_in, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: sign_up_attrs
   end
 
   def store_action

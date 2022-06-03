@@ -1,32 +1,42 @@
 <main class="container">
   <p style="color: green"><%= notice %></p>
-  <h1 class="">Manage Courses</h1>
-  <section class="d-flex justify-content-between my-3">
-    <%= link_to "Create new course", new_admin_course_path %>
+  <section class="d-flex justify-content-end my-3">
     <% unless user_signed_in? %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-      <%= link_to "Sign In", new_user_session_path %>
+      <div>
+        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "|    Sign In", new_user_session_path %>
+      </div>
     <% end %>
     <% if user_signed_in? %>
       <span>Hey, <%= current_user.first_name %></span>
-      <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <span>
+        <%# <%= image_tag(current_user.avatar) %>
+        <%= link_to_image("edit_icon.svg", edit_user_registration_path, {title: 'Edit Account'})%>
+        <%= button_to "Sign out", destroy_user_session_path, :method => :delete %>
+      </span>
     <% end %>
   </section>
-  <div id="courses">
-    <% @courses.each do |course| %>
-      <dl>
-        <dt>
-          <%= link_to course.course_name, [:admin, course] %>
-        </dt>
-        <dd>
-          <%= course.holes.count%> /
-          <%= course.hole_count%> holes added | 
-          <% if course.holes.any? %>
-            Par <%=course.course_par%>
-          <% end %>
-        </dd>
-        <hr/>
-      </dl>
-    <% end %>
-  </div>
+  <% if user_signed_in? %>
+    <h1 class="">Manage Courses</h1>
+    <div id="courses">
+      <%if current_user.admin? %>
+        <%= link_to "Create new course", new_admin_course_path %>
+      <%end%>
+      <% @courses.each do |course| %>
+        <dl>
+          <dt>
+            <%= link_to course.course_name, [:admin, course] %>
+          </dt>
+          <dd>
+            <%= course.holes.count%> /
+            <%= course.hole_count%> holes added | 
+            <% if course.holes.any? %>
+              Par <%=course.course_par%>
+            <% end %>
+          </dd>
+          <hr/>
+        </dl>
+      <% end %>
+    </div>
+  <%  end %>
 </main>

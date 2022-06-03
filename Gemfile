@@ -1,4 +1,5 @@
 source "https://rubygems.org"
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.1.1"
@@ -87,3 +88,5 @@ gem "rack-cors", "~> 1.1"
 
 gem "devise", "~> 4.8", ">= 4.8.1"
 gem "omniauth", "~> 2.1"
+gem "omniauth-google-oauth2", "~> 1.0", ">= 1.0.1"
+gem "omniauth-rails_csrf_protection"

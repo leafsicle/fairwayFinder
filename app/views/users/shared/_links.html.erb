@@ -15,6 +15,12 @@
 <% end %>
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+    <hr/>
+    <%= form_for "Login", 
+    url: omniauth_authorize_path(resource_name, provider), 
+    method: :post, 
+    data: {turbo: "false"} do |f| %>
+      <%= f.submit "login from _links", type: 'image', src: url_for("/assets/images/btn_google_signin_light_normal_web.png "), method: :post %>
+    <% end %>
   <% end %>
 <% end %>
