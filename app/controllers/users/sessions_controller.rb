@@ -22,8 +22,8 @@ class Users::SessionsController < Devise::SessionsController
     new_user_session_path
   end
 
-  def after_sign_in_path_for()
-    admin_course_holes_path
+  def after_sign_in_path_for(_resource_or_scope)
+    stored_location_for(_resource_or_scope) || admin_course_holes_path
   end
 
   # protected

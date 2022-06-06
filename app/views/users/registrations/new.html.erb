@@ -3,21 +3,23 @@
 url: registration_path(resource_name), 
 data: { turbo: false }) do |form| %>
   <%= render "users/shared/error_messages", resource: resource %>
-  <div class="field">
-    <%= form.label :email %><br />
-    <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  <% if user_signed_in? %>
+    <div class="field">
+      <%= form.label :email %><br />
+      <%= form.email_field :email,  autocomplete: "email" %>
+    </div>
+  <% end %>
   <div class="field">
     <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+    <%= form.text_field :first_name, autocomplete: "given-name" %>
   </div>
   <div class="field">
     <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, autocomplete: "family-name" %>
   </div>
   <div class="field">
     <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
+    <%= form.text_field :username,autofocus: true, autocomplete: "username" %>
   </div>
   <div class="field">
     <%= form.label :handicap, style: "display: block" %>
@@ -25,19 +27,19 @@ data: { turbo: false }) do |form| %>
   </div>
   <div class="field">
     <%= form.label "street Address", style: "display: block" %>
-    <%= form.text_field :street_address %>
+    <%= form.text_field :street_address, autocomplete: "street_address" %>
   </div>
   <div class="field">
     <%= form.label "City", style: "display: block" %>
-    <%= form.text_field :address_locality %>
+    <%= form.text_field :address_locality, autocomplete: "address-line2" %>
   </div>
   <div class="field">
     <%= form.label "State", style: "display: block" %>
-    <%= form.text_field :address_region %>
+    <%= form.text_field :address_region, autocomplete: "address-level1"  %>
   </div>
   <div class="field">
     <%= form.label "Zip code", style: "display: block" %>
-    <%= form.text_field :postal_code %>
+    <%= form.text_field :postal_code, autocomplete: "postal-code" %>
   </div>
   <div class="field">
     <%= form.label :password %>
