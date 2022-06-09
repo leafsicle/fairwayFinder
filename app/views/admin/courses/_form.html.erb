@@ -1,4 +1,7 @@
 <main class="container">
+  <%= link_to "Destroy this course", [:admin, @course], method: :delete,
+  class:"border border-danger text-light bg-danger", 
+  data: { confirm: 'Are you sure you want to delete a hole Golf course?'} %>
   <%= form_with(model: [:admin, course]) do |form| %>
     <% if course.errors.any? %>
       <div style="color: red">

@@ -677,17 +677,4 @@ puts "If you were wondering that is a combined #{@holes.sum (:fifth_tee_distance
 puts "Buying Golf Clubs for #{@users.all.count} users" unless @users.length < 2
 puts "Buying Golf Clubs for #{@users.all.count} user" if @users.length < 2
 
-UserType.create(
-  code: "user",
-  name: "user",
-)
-UserType.create(
-  code: "mgr",
-  name: "Course Manager",
-)
-UserType.create(
-  code: "spt",
-  name: "Support",
-)
-
 puts "Grass and DB are fully seeded!"
