@@ -1,6 +1,7 @@
 class User < ApplicationRecord
+  include Gravtastic
+  gravtastic
   after_initialize :set_default_role, :if => :new_record?
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
@@ -8,7 +9,6 @@ class User < ApplicationRecord
   has_many :scorecards, foreign_key: "scorecard_id"
   enum :role, %i[user admin dev]
 
-  validates :username, presence: true, length: { maximum: 20 }, confirmation: { case_sensitive: true }, uniqueness: true
   validates :email, presence: true, length: { maximum: 30 }, confirmation: { case_sensitive: true }, uniqueness: true, on: :create
 
   def set_default_role

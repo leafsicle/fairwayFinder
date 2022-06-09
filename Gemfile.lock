@@ -112,6 +112,7 @@ GEM
     geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gravtastic (3.2.6)
     hashie (5.0.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
@@ -292,6 +293,7 @@ DEPENDENCIES
   debug
   devise (~> 4.8, >= 4.8.1)
   geocoder (~> 1.7)
+  gravtastic
   importmap-rails
   jbuilder
   jquery-rails
