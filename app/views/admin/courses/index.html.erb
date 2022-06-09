@@ -5,9 +5,9 @@
       <span>
         <span class="navbar-link d-none d-md-block">
           <% if current_user.avatar_url? %>
-            <%= image_tag current_user.gravatar_url %>
+            <%= image_tag current_user.gravatar_url, {title: 'Edit Account', :class => 'rounded-circle' }%>
           <% else %>
-            <%= image_tag "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" %>
+            <%= image_tag "https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y",class: "rounded-circle" %>
           <% end %>
         </span>
         <%= link_to_image("edit_icon.svg", edit_user_registration_path, {title: 'Edit Account', :class => 'navbar-link' })%>
