@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
+
   devise :database_authenticatable,
     :registerable,
     :recoverable,
@@ -24,7 +25,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.full_name = auth.info.full_name
-      user.avatar_url = auth.info.avatar_url
+      user.avatar_url = auth.info.image
       user.first_name = auth.info.given_name
       user.last_name = auth.info.family_name
     end

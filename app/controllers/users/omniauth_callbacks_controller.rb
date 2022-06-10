@@ -20,18 +20,15 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
-  # More info at:
-  # https://github.com/heartcombo/devise#omniauth
-
   # GET|POST /resource/auth/twitter
-  # def passthru
-  #   super
-  # end
+  def passthru
+    super
+  end
 
   # GET|POST /users/auth/twitter/callback
-  # def failure
-  #   super
-  # end
+  def failure
+    redirect_to root_path
+  end
 
   # protected
 
