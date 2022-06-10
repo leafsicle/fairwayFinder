@@ -22,7 +22,7 @@
   <% if current_user.encrypted_password.present? %>
     You don't have a password.     
     <%= link_to "Fix this?", 
-      edit_user_registration_path, 
+      admin_courses_path, 
       method: :get,
       :class => 'btn btn-danger'  
     %>
