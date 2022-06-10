@@ -1,10 +1,14 @@
 class User < ApplicationRecord
-  include Gravtastic
-  gravtastic
   after_initialize :set_default_role, :if => :new_record?
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2]
+  devise :database_authenticatable,
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :validatable,
+    :omniauthable,
+    :omniauth_providers => [
+      :google_oauth2,
+    ]
 
   has_many :scorecards, foreign_key: "scorecard_id"
   enum :role, %i[user admin dev]
