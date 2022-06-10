@@ -8,7 +8,7 @@
       </p>
     <% end %>
   </h2>
-  <%=  link_to "Course Website", course.website_url %> | 
+  <%= link_to "Course Website", course.website_url %> | 
   <%= link_to "Back to courses", admin_courses_path %>
   <p>
     <% if course.holes.any? %>

@@ -4,6 +4,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
+  def update_resource(resource, params)
+    if resource.provider = "google_oauth2"
+      params.delete("current_password")
+      resource.password = params["password"]
+
+      resource.update_without_password(params)
+    else
+      resource.update_with_password(params)
+    end
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -29,17 +40,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  def update_resource(resource, params)
-    if resource.provider = "google_oauth2"
-      params.delete("current_password")
-      resource.password = params["password"]
-
-      resource.update_without_password(params)
-    else
-      resource.update_with_password(params)
-    end
-  end
-
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to
@@ -50,7 +50,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # protected
-
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
