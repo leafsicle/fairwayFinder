@@ -21,6 +21,7 @@
   </section>
   <% if user_signed_in? %>
     <h1 class="">Manage Courses</h1>
+    <%= link_to "Add Course", new_admin_course_path, :class => 'btn btn-primary'  %>
     <div id="courses">
       <%if current_user.admin? %>
         <%= link_to "Create new course", new_admin_course_path %>
