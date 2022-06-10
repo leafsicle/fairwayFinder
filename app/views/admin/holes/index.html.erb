@@ -9,7 +9,7 @@
   <% end %>
 </nav>
 <ul id="holes" class="list-group">
-  <% @course.holes.each do |hole| %>
+  <% @course.holes.order("hole_number ASC").each do |hole| %>
     <li class ="list-group-item m-3 rounded">
       <%= render hole %>
     </li>
