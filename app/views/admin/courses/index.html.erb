@@ -21,26 +21,31 @@
   </section>
   <% if user_signed_in? %>
     <h1 class="">Manage Courses</h1>
-    <%= link_to "Add Course", new_admin_course_path, :class => 'btn btn-primary'  %>
-    <div id="courses">
-      <%if current_user.admin? %>
-        <%= link_to "Create new course", new_admin_course_path %>
-      <%end%>
-      <% @courses.each do |course| %>
-        <dl>
-          <dt>
-            <%= link_to course.course_name, [:admin, course] %>
-          </dt>
-          <dd>
-            <%= course.holes.count%> /
-            <%= course.hole_count%> holes added | 
-            <% if course.holes.any? %>
-              Par <%=course.course_par%>
-            <% end %>
-          </dd>
+    <%= link_to "Add Course", new_admin_course_path, :class => 'btn btn-primary my-1'  %>
+    <div class="my-4">
+      <div id="courses">
+        <%if current_user.admin? %>
+          <%= link_to "Create new course", new_admin_course_path %>
+        <%end%>
+        <% @courses.each do |course| %>
+          <div class="d-flex justify-content-between">
+            <dl class="d-flex flex-column" >
+              <dt>
+                <%= link_to course.course_name, [:admin, course] %>
+              </dt>
+              <dd>
+                <%= course.holes.count%> /
+                <%= course.hole_count%> holes added | 
+                <% if course.holes.any? %>
+                  Par <%=course.course_par%>
+                <% end %>
+              </dd>
+            </dl>
+            <%= link_to "play!", new_admin_course_scorecard_url(course), method: :get,:class => 'btn btn-success' %>
+          </div>
           <hr/>
-        </dl>
-      <% end %>
-    </div>
-  <%  end %>
+        <% end %>
+      </div>
+    <%  end %>
+  </div>
 </main>

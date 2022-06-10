@@ -21,6 +21,6 @@
   </section>
   <% if user_signed_in? %>
     <%# some auth will be here to pre-filter courses permitted to be managed by this user %>
-    <%= button_to "see courses", admin_courses_path, method: :get %>
+    <%= button_to "see courses", admin_courses_path, method: :get,:class => 'btn btn-primary'  %>
   <% end %>
 </main>

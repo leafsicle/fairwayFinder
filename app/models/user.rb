@@ -25,6 +25,7 @@ class User < ApplicationRecord
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.full_name = auth.info.full_name
+      # debugger if user.full_name.nil?
       user.avatar_url = auth.info.image
       user.first_name = auth.info.given_name
       user.last_name = auth.info.family_name
