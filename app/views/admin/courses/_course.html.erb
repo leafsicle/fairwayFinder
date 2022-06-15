@@ -18,11 +18,11 @@
       - Par <%=course.course_par  %>
     <% end %>
     <br>
-    <%= course.hour_open %>am to <%= course.hour_close %>pm
+    <%= course.hour_open %> am to <%= course.hour_close %> pm
   </p>
   <% if course.playable? %>
-    <%# add a button here to start a round as the currently logged-in user %>
-    <%=  link_to " Quick Round  ", new_admin_course_scorecard_url(@course)%>
+    <%# <%=  link_to " Quick Round  ", new_admin_course_scorecard_url(@course)%>
+    <%# <%= current_user.column_names    %>
   <% end %>
   <address class= "course-addr">
     <%= course.street_address %><br>

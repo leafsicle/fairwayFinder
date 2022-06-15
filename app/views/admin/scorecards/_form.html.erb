@@ -3,6 +3,7 @@
     <%= @course.course_name%>
   </h5>
   <span>New scorecard</span>
+  <%= @course.holes.count %> holes
   <% if scorecard.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(scorecard.errors.count, "error") %> prohibited this scorecard from being saved:</h2>
@@ -17,14 +18,14 @@
     <%# <%=form.collection_select( :hole_number, @course.remaining_holes , :hole_number, :id, :hole_number) %>
     <%= form.label :user_id, style: "display: block" %>
     <%= form.text_field :user_id %>
-    <%= form.label :course_id, style: "display: block" %>
+    <div>You have access to @course && @user </div>
     <%= form.text_field :course_id %>
-    <%# TODO: need to add migrations and determine how to flow the routing for creating scorecards %>
     <% @course.holes.order(:hole_number).map do |hole|%>
-      <div>
-        <%= hole.hole_number %>
-        par <%= hole.par_value %>
-      </div>
+      <%if hole.hole_number ==1 %>
+        <div>
+          <%= hole.hole_number %> par <%= hole.par_value %>
+        </div>
+      <%end%>
     <%end%>
   </div>
   <div>
