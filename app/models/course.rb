@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  has_many :holes, :dependent => :destroy, inverse_of: 'course'
+  has_many :holes, :dependent => :destroy, inverse_of: "course"
   has_many :scorecards
 
   validates :hole_count, presence: true, numericality: { in: 1..21 }
@@ -11,10 +11,10 @@ class Course < ApplicationRecord
   validates :address_locality, presence: true
   validates :address_region, presence: true
   validates :postal_code, presence: true
-  
+
   # work on activation stuff later
   # def deactivate
-  #   course.active? 
+  #   course.active?
   # end
 
   def course_par
@@ -22,13 +22,13 @@ class Course < ApplicationRecord
   end
 
   def address
-    [street_address, address_locality, address_region, postal_code ].compact.join(', ')
+    [street_address, address_locality, address_region, postal_code].compact.join(", ")
   end
 
   def remaining_holes
     hole_arr = []
     holes.each do |hole|
-      unless hole.hole_number.nil? 
+      unless hole.hole_number.nil?
         hole_arr << hole.hole_number
       end
     end

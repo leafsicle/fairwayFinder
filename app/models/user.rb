@@ -12,6 +12,7 @@ class User < ApplicationRecord
     ]
 
   has_many :scorecards, foreign_key: "scorecard_id"
+  has_many :hole_performances, through: :scorecards
   enum :role, %i[user admin dev]
 
   validates :email, presence: true, length: { maximum: 30 }, confirmation: { case_sensitive: true }, uniqueness: true, on: :create

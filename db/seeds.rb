@@ -2,6 +2,25 @@
 #  loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 
 # create_course
+
+require "json"
+require "open-uri"
+
+# poke_ids = (1..151).to_a
+
+# 151.times do |index|
+#   poke_id = poke_ids[index]
+#   conn = Faraday.new("https://pokeapi.co")
+#   response = conn.get("/api/v2/pokemon/#{poke_id}/")
+#   @pokemonApi = JSON.parse(response.body, symbolize_names: true)
+#   new_poke = Pokemon.create(
+#     pokeid: @pokemonApi[:id],
+#     name: @pokemonApi[:name],
+#     iamgeurl: @pokemonApi[:sprites][:front_default],
+#     # type: @pokemonApi[:types].first[:type][:name].capitalize
+#   )
+# end
+# https://rapidapi.com/golfambit-golfambit-default/api/golf-course-finder/
 Course.create!(
   course_name: "Mangrove Bay",
   membership: false,
@@ -92,7 +111,7 @@ Course.create!(
 puts "Adding ice to #{@courses.count} uber fancy clubhouses" unless @courses.length < 2
 puts "Adding ice to the clubhouse" if @courses.length < 2
 
-Hole.create!(
+ole.create!(
   hole_number: 1,
   course_hcap_val: 14,
   par_value: 4,
@@ -106,7 +125,7 @@ Hole.create!(
   course_id: 1,
 )
 
-Hole.create!(
+ole.create!(
   hole_number: 2,
   course_hcap_val: 2,
   par_value: 5,
@@ -120,7 +139,7 @@ Hole.create!(
   course_id: 1,
 )
 
-Hole.create!(
+ole.create!(
   hole_number: 3,
   course_hcap_val: 18,
   par_value: 3,
@@ -135,7 +154,7 @@ Hole.create!(
 
 )
 
-Hole.create!(
+ole.create!(
   hole_number: 4,
   course_hcap_val: 8,
   par_value: 4,
@@ -150,7 +169,7 @@ Hole.create!(
 
 )
 
-Hole.create!(
+ole.create!(
   hole_number: 5,
   course_hcap_val: 4,
   par_value: 4,
@@ -165,7 +184,7 @@ Hole.create!(
 
 )
 
-Hole.create!(
+ole.create!(
   hole_number: 6,
   course_hcap_val: 6,
   par_value: 5,
