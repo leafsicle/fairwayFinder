@@ -12,7 +12,6 @@ class CreateHoles < ActiveRecord::Migration[7.0]
       t.integer :fourth_tee_distance
       t.integer :fifth_tee_distance
       t.belongs_to :course, null: false
-
       t.timestamps
     end
   end

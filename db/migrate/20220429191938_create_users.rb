@@ -9,10 +9,16 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.integer :home_course_id
       t.float :handicap
       t.string :street_address
-      t.string :address_locatity
+      t.string :address_locality
       t.string :address_region
       t.string :postal_code
-
+      t.decimal :latitude 
+      t.decimal :longitude
+      t.string :avatar_url
+      t.string :uid
+      t.string :full_name
+      t.string :provider
+      t.string :
       t.timestamps
     end
   end
