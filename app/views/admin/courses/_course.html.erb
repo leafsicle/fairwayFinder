@@ -15,15 +15,11 @@
       <%= course.holes.count.to_s + " / " + course.hole_count.to_s+" holes added" %>
     <% end %>
     <% if course.holes.count == course.hole_count %>
-      - Par <%=course.course_par  %>
+      - Par <%=course.par  %>
     <% end %>
     <br>
     <%= course.hour_open %> am to <%= course.hour_close %> pm
   </p>
-  <% if course.playable? %>
-    <%# <%=  link_to " Quick Round  ", new_admin_course_scorecard_url(@course)%>
-    <%# <%= current_user.column_names    %>
-  <% end %>
   <address class= "course-addr">
     <%= course.street_address %><br>
     <%= course.address_locality %><br>

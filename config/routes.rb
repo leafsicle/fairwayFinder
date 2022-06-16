@@ -11,8 +11,7 @@ Rails.application.routes.draw do
       resources :hole_performances
     end
     resources :courses do
-      resources :scorecards
-      resources :holes
+      resources :scorecards, :holes
     end
   end
   devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }

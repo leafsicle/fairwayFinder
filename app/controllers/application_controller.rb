@@ -8,9 +8,10 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :sign_in, keys: sign_up_attrs
     devise_parameter_sanitizer.permit :account_update, keys: sign_up_attrs
   end
+
   protected
 
   def after_sign_in_path_for(resource)
-    request.env["omniauth.origin"] || root_path
+    request.env["omniauth.origin"] || admin_courses_path(resource)
   end
 end

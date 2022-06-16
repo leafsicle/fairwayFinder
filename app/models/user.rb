@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   after_initialize :set_default_role, :if => :new_record?
+  has_many :scorecards, foreign_key: "scorecard_id"
+  has_many :hole_performances, through: :scorecards
+  enum :role, %i[user admin dev]
 
   devise :database_authenticatable,
     :registerable,
@@ -10,10 +13,6 @@ class User < ApplicationRecord
     :omniauth_providers => [
       :google_oauth2,
     ]
-
-  has_many :scorecards, foreign_key: "scorecard_id"
-  has_many :hole_performances, through: :scorecards
-  enum :role, %i[user admin dev]
 
   validates :email, presence: true, length: { maximum: 30 }, confirmation: { case_sensitive: true }, uniqueness: true, on: :create
 
