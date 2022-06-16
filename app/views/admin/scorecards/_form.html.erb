@@ -15,9 +15,7 @@
     </div>
   <% end %>
   <div>
-    <%# <%=form.collection_select( :hole_number, @course.remaining_holes , :hole_number, :id, :hole_number) %>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= p scorecard.hole_performances.any? %>
     <div>You have access to @course && @user </div>
     <%= form.text_field :course_id %>
     <% @course.holes.order(:hole_number).map do |hole|%>
