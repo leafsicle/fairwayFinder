@@ -19,16 +19,17 @@
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
   </section>
-  <% if current_user.encrypted_password.present? %>
+  <% unless current_user.encrypted_password.present? %>
     You don't have a password.     
     <%= link_to "Fix this?", 
-      admin_courses_path, 
+      new_user_password_path(current_user),  
       method: :get,
       :class => 'btn btn-danger'  
     %>
   <% end %>
   <% if user_signed_in? %>
-    <%# some auth will be here to pre-filter courses permitted to be managed by this user %>
+    <%= current_user.full_name%>
+    <%# some a uth will be here to pre-filter courses permitted to be managed by this user %>
     <%= link_to "see courses", admin_courses_path, method: :get,:class => 'btn btn-primary'  %>
   <% end %>
 </main>
