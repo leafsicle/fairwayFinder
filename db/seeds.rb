@@ -111,7 +111,7 @@ Course.create!(
 puts "Adding ice to #{@courses.count} uber fancy clubhouses" unless @courses.length < 2
 puts "Adding ice to the clubhouse" if @courses.length < 2
 
-ole.create!(
+Hole.create!(
   hole_number: 1,
   course_hcap_val: 14,
   par_value: 4,
@@ -125,7 +125,7 @@ ole.create!(
   course_id: 1,
 )
 
-ole.create!(
+Hole.create!(
   hole_number: 2,
   course_hcap_val: 2,
   par_value: 5,
@@ -139,7 +139,7 @@ ole.create!(
   course_id: 1,
 )
 
-ole.create!(
+Hole.create!(
   hole_number: 3,
   course_hcap_val: 18,
   par_value: 3,
@@ -154,7 +154,7 @@ ole.create!(
 
 )
 
-ole.create!(
+Hole.create!(
   hole_number: 4,
   course_hcap_val: 8,
   par_value: 4,
@@ -169,7 +169,7 @@ ole.create!(
 
 )
 
-ole.create!(
+Hole.create!(
   hole_number: 5,
   course_hcap_val: 4,
   par_value: 4,
@@ -184,7 +184,7 @@ ole.create!(
 
 )
 
-ole.create!(
+Hole.create!(
   hole_number: 6,
   course_hcap_val: 6,
   par_value: 5,

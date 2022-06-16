@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    scope "/scorecards/:scorecard_id" do
+      resources :hole_performances
+    end
     resources :courses do
       resources :scorecards
       resources :holes

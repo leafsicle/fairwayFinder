@@ -15,8 +15,8 @@
     </div>
   <% end %>
   <div>
-    <%= p scorecard.hole_performances.any? %>
-    <div>You have access to @course && @user </div>
+    <%= p @course.scorecards.any? %>
+    <%= p @course.par %>
     <%= form.text_field :course_id %>
     <% @course.holes.order(:hole_number).map do |hole|%>
       <%if hole.hole_number ==1 %>
