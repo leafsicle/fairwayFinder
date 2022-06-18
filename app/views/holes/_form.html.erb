@@ -1,5 +1,4 @@
-<%= form_with(model: [@course, hole], local: true, :html => {:class => "form-control"}) do |form| %>
-  <% if hole.errors.any? %>
+<%= form_with(model: [@course, hole], local: true, :html => {:class => "form-control"}) do |form| %>  <% if hole.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(hole.errors.count, "error") %> prohibited this hole from being saved:</h2>
       <ul>
@@ -9,6 +8,7 @@
       </ul>
     </div>
   <% end %>
+  <%# <%= @course.valid? % > %>
   <div class="row row-cols-2">
     <div class="col">
       <div class="input-group">
@@ -17,12 +17,12 @@
       </div>
       <div class="input-group">
         <span class="input-group-text">Hcap</span>
-        <input type="number" class="form-control" name="course_hcap_val" placeholder="yds" value="<%= hole.course_hcap_val %>">
+        <input type="number" class="form-control" name="course_hcap_val" value="<%= hole.course_hcap_val %>">
       </div>
       <div class="input-group">
         <span class="input-group-text ">Par
         </span>
-        <input type="number" class="form-control" name="par_value" placeholder="yds" aria-label="How hard is this hole compared to the rest?" value="<%= hole.par_value %>">
+        <input type="number" class="form-control" name="par_value" aria-label="How hard is this hole compared to the rest?" value="<%= hole.par_value %>">
       </div>
     </div>
     <div class="col">

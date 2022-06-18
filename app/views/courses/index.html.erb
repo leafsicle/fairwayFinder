@@ -1,5 +1,5 @@
 <main class="container mt-3">
-  <section class="d-flex justify-content-between align-items-baseline shadow p-3 mb-5 bg-body rounded" >
+  <section class="d-flex justify-content-between align-items-baseline shadow p-3 mb-3 bg-body rounded" >
     <% if user_signed_in? %>
       <h3> Fairway Finder </h3>
       <span>
@@ -23,21 +23,20 @@
   </section>
   <% if user_signed_in? %>
     <h1 class="">Manage Courses</h1>
-    <%= link_to "Add Course", new_course_path, :class => 'btn btn-primary my-1'  %>
     <div class="my-4">
       <div id="courses">
-        <%if current_user %>
-          <%= link_to "Create new course (this will be admin checked)", new_course_path %>
-        <%end%>
+        <%# <%if current_user.role == "admin" ||  current_user.role == "dev" % > %>
+        <%= link_to "Add Course", new_course_path, :class => 'btn btn-warning my-1'  %>
+        <%# <%end% > %>
         <% @courses.each do |course| %>
-          <div class="d-flex justify-content-between shadow p-3 mb-5 bg-body rounded">
+          <div class="d-flex justify-content-between shadow p-3 mb-3 bg-body rounded">
             <dl class="d-flex flex-column " >
               <dt>
                 <%= link_to course.name, course_url(course) %>
               </dt>
               <dd>
                 <%= course.holes.count%> /
-                <%= course.hole_count%> holes added | 
+                <%= course.hole_count%> holes | 
                 <% if course.holes.any? %>
                   Par <%=course.par%>
                 <% end %>
@@ -46,7 +45,6 @@
             <%= link_to "play!", new_course_scorecard_url(course), method: :get,:class => 'btn btn-success my-auto
             ' %>
           </div>
-          <hr/>
         <% end %>
       </div>
     <%  end %>
