@@ -22,7 +22,7 @@ require "open-uri"
 # end
 # https://rapidapi.com/golfambit-golfambit-default/api/golf-course-finder/
 Course.create!(
-  course_name: "Mangrove Bay",
+  name: "Mangrove Bay",
   membership: false,
   hole_count: 18,
   phone: "7278937800",
@@ -65,7 +65,7 @@ Course.create!(
   rating: 5,
 )
 Course.create!(
-  course_name: "Innisbrook: Copperhead",
+  name: "Innisbrook: Copperhead",
   membership: false,
   hole_count: 18,
   phone: "800-492-6899",

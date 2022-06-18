@@ -1,6 +1,6 @@
-<%= form_with(model: [:admin, @course, @scorecard]) do |form| %>
+<%= form_with(model: [@course, @scorecard]) do |form| %>
   <h5>
-    <%= @course.course_name%>
+    <%= @course.name%>
   </h5>
   <span>New scorecard</span>
   <%= @course.holes.count %> holes

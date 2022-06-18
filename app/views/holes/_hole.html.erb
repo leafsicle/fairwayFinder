@@ -1,7 +1,7 @@
 <div id="<%= dom_id hole %>">
   <%# this partial represents what is seen from a course/id/holes perspective %>
   <h5>
-    <%= link_to "Hole #{hole.hole_number}", edit_admin_course_hole_path(@course, hole) %>
+    <%= link_to "Hole #{hole.hole_number}", edit_course_hole_path(@course, hole) %>
   </h5>
   <span>
     <b>Par</b>

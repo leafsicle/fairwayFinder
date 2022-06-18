@@ -44,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_201312) do
     t.string "postal_code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "course_name"
+    t.string "name"
     t.integer "first_tee_slope"
     t.float "first_tee_rating"
     t.integer "second_tee_slope"

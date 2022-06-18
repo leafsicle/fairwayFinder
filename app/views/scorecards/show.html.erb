@@ -1,0 +1,6 @@
+<%= render @scorecard %>
+<div>
+  <%= link_to "Edit this scorecard", edit_scorecard_path(@scorecard) %> |
+  <%= link_to "Back to scorecards", scorecards_path %>
+  <%= button_to "Destroy this scorecard", @scorecard, method: :delete %>
+</div>

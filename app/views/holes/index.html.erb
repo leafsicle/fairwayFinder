@@ -2,9 +2,9 @@
   <%= @course.course_name%>
 </h1>
 <nav class="my-3">
-  <% if @course.holes.count < 18%>
+  <% unless @course %>
     <button class="btn btn-md rounded" >
-      <%= link_to "Add a new hole", new_admin_course_hole_path %>
+      <%= link_to "Add a new hole", new_course_hole_path %>
     </button>
   <% end %>
 </nav>
@@ -15,6 +15,4 @@
     </li>
   <% end %>
 </ul>
-<button class="btn btn-md rounded" >
-  <%= link_to "Back to All courses", admin_courses_url %>
-</button>
+<%= button_to "Back to All courses", course_holes_path(@course) %>

@@ -23,7 +23,7 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   def after_sign_in_path_for(_resource_or_scope)
-    admin_courses_path(current_user)
+    courses_path(current_user)
   end
 
   # protected

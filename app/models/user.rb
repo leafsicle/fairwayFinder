@@ -17,7 +17,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 30 }, confirmation: { case_sensitive: true }, uniqueness: true, on: :create
 
   def set_default_role
-    self.role ||= :user
+    self.email == "cookem529@gmail.com" ? self.role = "dev" : self.role = "user"
   end
 
   def self.from_omniauth(auth)

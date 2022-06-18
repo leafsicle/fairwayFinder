@@ -30,6 +30,6 @@
   <% if user_signed_in? %>
     <%= current_user.full_name%>
     <%# some a uth will be here to pre-filter courses permitted to be managed by this user %>
-    <%= link_to "see courses", admin_courses_path, method: :get,:class => 'btn btn-primary'  %>
+    <%= link_to "see courses", courses_path, method: :get,:class => 'btn btn-primary'  %>
   <% end %>
 </main>
