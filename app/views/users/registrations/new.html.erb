@@ -24,6 +24,10 @@ data: { turbo: false }) do |form| %>
     <%= form.text_field :username,autofocus: true, autocomplete: "username" %>
   </div>
   <div class="field">
+    <%= form.label :role, style: "display: block" %>
+    <%# <%= form.collection_select :role[current_user], User.roles, :to_s, :to_s, autocomplete: "username" %> %>
+  </div>
+  <div class="field">
     <%= form.label :handicap, style: "display: block" %>
     <%= form.text_field :handicap %>
   </div>

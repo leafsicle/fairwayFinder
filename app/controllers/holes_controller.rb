@@ -4,12 +4,11 @@ class HolesController < ApplicationController
 
   # GET /holes or /holes.json
   def index
-    @holes = @course.holes.order("hole_number ASC")
+    @holes = @course.holes
   end
 
   # GET /holes/1 or /holes/1.json
   def show
-    @hole
   end
 
   # GET /holes/new
@@ -30,7 +29,7 @@ class HolesController < ApplicationController
         format.html { redirect_to course_holes_path(@course), notice: "Hole was successfully created." }
         format.json { render :show, status: :created, location: @hole }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @hole.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +42,7 @@ class HolesController < ApplicationController
         format.html { redirect_to course_hole_path(@course), notice: "Hole was successfully updated." }
         format.json { render :show, status: :ok, location: @course }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit }
         format.json { render json: @hole.errors, status: :unprocessable_entity }
       end
     end
@@ -54,7 +53,7 @@ class HolesController < ApplicationController
     @hole.destroy
 
     respond_to do |format|
-      format.html { redirect_to course_holes_url(@course), notice: "Hole was successfully destroyed." }
+      format.html { redirect_to course_holes_path(@course), notice: "Hole was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -66,15 +65,16 @@ class HolesController < ApplicationController
   end
 
   # Use callbacks to share common setup or constraints between actions.
+
   def set_hole
-    @hole = @course.holes.find(params[:id])
+    @hole = @course.hole.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.
   def hole_params
     params.require(:hole).permit(
-      :hole_number,
       :course_id,
+      :hole_number,
       :par_value,
       :course_hcap_val,
       :center_of_green,

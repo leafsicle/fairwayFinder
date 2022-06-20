@@ -29,7 +29,7 @@ class CoursesController < ApplicationController
         format.html { redirect_to course_url(@course), notice: "Course was successfully created." }
         format.json { render :show, status: :created, location: @course }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { render :new }
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end
@@ -42,7 +42,7 @@ class CoursesController < ApplicationController
         format.html { redirect_to course_url(@course), notice: "Course was successfully updated." }
         format.json { render :show, status: :ok, location: @course }
       else
-        format.html { render :edit, status: :unprocessable_entity }
+        format.html { render :edit }
         format.json { render json: @course.errors, status: :unprocessable_entity }
       end
     end

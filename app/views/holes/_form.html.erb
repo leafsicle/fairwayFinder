@@ -1,14 +1,14 @@
-<%= form_with(model: [@course, hole], local: true, :html => {:class => "form-control"}) do |form| %>  <% if hole.errors.any? %>
+<%= form_with(model: [@course, hole], local: true, :html => {:class => "form-control"}) do |form| %>
+  <%# <% if hole.errors.any? % >
     <div style="color: red">
-      <h2><%= pluralize(hole.errors.count, "error") %> prohibited this hole from being saved:</h2>
+      <h2><%= pluralize(hole.errors.count, "error") % > prohibited this hole from being saved:</h2>
       <ul>
-        <% hole.errors.each do |error| %>
-          <li><%= error.full_message%></li>
-        <% end %>
+        <% hole.errors.each do |error| % >
+          <li><%= error.full_message% ></li>
+        <% end % >
       </ul>
     </div>
-  <% end %>
-  <%# <%= @course.valid? % > %>
+  <% end % >  %>
   <div class="row row-cols-2">
     <div class="col">
       <div class="input-group">
@@ -61,6 +61,6 @@
     </div>
   </div>
   <button type="button" class="btn btn-outline-sucess">
-    <%= form.submit 'Save' %>
+    <%= form.submit  %>
   </button>
 <% end %>
