@@ -1,11 +1,9 @@
 <div id="<%= dom_id user %>">
   <section class="d-flex justify-content-between">
-    <h5 class ="m-3">
+    <h5 class="m-3">
       <%= user.full_name %>
     </h5>
-    <span class= "">
-      <%= link_to_image("edit_icon.svg", edit_user_path(user), {title: 'Edit this user'})%>
-    </span>
+    <span class=""> </span>
   </section>
   <details>
     <summary>User Details</summary>
@@ -13,11 +11,9 @@
     <a href="email:<%= user.email %>">
       <%= user.email %>
     </a>
-    <p>
-      HCAP: <%= user.handicap %>
-    </p>
+    <p>HCAP: <%= user.handicap %></p>
     <address>
-      <%= user.street_address %> <br>
+      <%= user.street_address %> <br />
       <%= user.address_locality %>,
       <%= user.address_region %>
       <%= user.postal_code %>

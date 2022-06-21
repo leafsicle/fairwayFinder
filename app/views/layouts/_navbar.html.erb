@@ -1,32 +1,68 @@
-<nav class="navbar navbar-expand-md navbar-light bg-primary bg-text-white">
+<nav
+  class="navbar navbar-expand-md navbar-light bg-primary bg-text-white rounded"
+>
   <div class="container-fluid">
-    <h1 class ="bg:green my-4 navbar-brand">
-      <%= @course.name %>
-      <%= link_to_image("edit_icon.svg", edit_course_path(@course), {title: 'Edit this course'})%>
-    </h1>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <h5 class="bg:green my-2 navbar-brand">
+      <%=
+        link_to 'Fairway Finder',
+                root_path,
+                {
+                  class:
+                    'text-white font-weight-bold text-decoration-none text-uppercase d-none d-md-inline'
+                }
+      %>
+      <%=
+        link_to 'FF',
+                root_path,
+                {
+                  class:
+                    'text-white font-weight-bold text-decoration-none text-uppercase d-inline d-md-none'
+                }
+      %>
+    </h5>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo02"
+      aria-controls="navbarTogglerDemo02"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to 'New Hole', new_course_hole_path(@course), 
-            :title => "Add a new hole to #{@course.name}", 
-            :target => '_blank', 
-            :class => 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "External course website", @course.website_url, 
-            :title => "redirect to course's main website", 
-            :target => '_blank', 
-            :class => 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Back to Course', course_path(@course),
-            :target => '_blank', 
-            :class => 'nav-link' %>
-        </li>
-      </ul>
-    </div>
+    <section>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 align-items-end p-1 ">
+        <% if user_signed_in? %>
+          <li class="nav-item">
+            <%=
+              link_to 'New course',
+                      new_course_path,
+                      { class: 'nav-link text-white' }
+            %>
+          </li>
+          <li>
+            <%=
+              link_to 'Courses', courses_path, { class: 'nav-link text-white' }
+            %>
+          </li>
+          <li>
+              <%=
+                link_to 'Logout',
+                        destroy_user_session_path,
+                        { class: 'nav-link text-white' }
+              %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
   </div>
 </nav>

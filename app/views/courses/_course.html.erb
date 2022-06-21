@@ -1,123 +1,43 @@
 <div id="<%= dom_id course %>" class="hole-card">
-  <h2>
-    <%= link_to course.name, course.website_url %>
-    <%= link_to_image("edit_icon.svg", edit_course_path(@course), {title: 'Edit this course'})%>
-  </h2>
   <section>
-    <address class= "course-addr">
-      <%= course.street_address %><br>
-      <%= course.address_locality %><br>
-      <%= course.address_region %>,
-      <%= course.postal_code %><br>
+    <h5>
+      <%= course.name %>
+      <%=
+        link_to_image(
+          'edit_icon.svg',
+          edit_course_path(course),
+          class: 'btn btn-md    btn-outline-primary'
+        )
+      %>
+    </h5>
+    <address class="course-addr">
+      <%= course.street_address %><br />
+      <%= course.address_locality %><br />
+      <%= course.address_region %>, <%= course.postal_code %><br />
       <a href="tel:<%= course.phone %>"><%= course.phone %> </a>
     </address>
     <p>
       <% if course.holes.any? %>
-        <%= course.holes.count.to_s + " / " + course.hole_count.to_s+" holes added" %>
+        <%=
+          course.holes.count.to_s + ' / ' + course.hole_count.to_s +
+            ' holes added'
+        %>
+        - Par <%= course.par_value %>
       <% end %>
-      <% if course.holes.count == course.hole_count %>
-        - Par <%=course.par  %>
-      <% end %>
-      <br>
+      <br />
       <%= course.hour_open %> am to <%= course.hour_close %> pm
     </p>
-    <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
-      <%= link_to "Add holes", new_course_hole_path(@course), {class: 'btn btn-primary'} %>
+    <% if @course.holes.count < @course.hole_count %>
+      <%=
+        link_to 'Add holes',
+                new_course_hole_path(@course),
+                { class: 'btn btn-primary m-1' }
+      %>
+      <%=
+        link_to 'View all holes',
+                course_holes_path(@course),
+                { class: 'btn btn-primary m-1' }
+      %>
     <% end %>
   </section>
-  <hr>
-  <details>
-    <summary>Course Features</summary>
-    <ul>
-      <%if course.membership?%>
-        <li>Course membership</li>
-      <% end %>
-      <%if course.driving_range?%>
-        <li>Driving Range</li>
-      <% end %>
-      <% if course.putting_green? %>
-        <li>
-          Putting Green
-        </li>
-      <% end %>
-      <% if course.chipping_area? %>
-        <li>
-          Chipping Area
-        </li>
-      <% end %>
-      <% if course.practice_bunker? %>
-        <li>
-          Practice Bunker
-        </li>
-      <% end %>
-      <% if course.riding_cart? %>
-        <li>
-          Rental Golf Carts
-        </li>
-      <% end %>
-      <% if course.push_cart? %>
-        <li>
-          Push carts for rent
-        </li>
-      <% end %>
-      <% if course.pro_shop? %>
-        <li>
-          Stocked Pro shop
-        </li>
-      <% end %>
-      <% if course.club_rental? %>
-        <li>
-          Club Rental
-        </li>
-      <% end %>
-      <% if course.caddie_services? %>
-        <li>
-          Caddies available for hire
-        </li>
-      <% end %>
-      <% if course.lessons? %>
-        <li>
-          Lessons with a PGA Pro
-        </li>
-      <% end %>
-      <% if course.locker_room_onsite? %>
-        <li>
-          Locker room
-        </li>
-      <% end %>
-      <% if course.shower_onsite? %>
-        <li>
-          Shower facilities
-        </li>
-      <% end %>
-      <% if course.lodging_onsite? %>
-        <li>
-          Lodging
-        </li>
-      <% end %>
-      <% if course.clubfitting? %>
-        <li>
-          Club-fitting services
-        </li>
-      <% end %>
-      <% if course.punched_greens? %>
-        <li>
-          Players reported punched greens today
-        </li>
-      <% end %>
-      <% if course.sanded_greens? %>
-        <li>
-          Players have reported sanded greens today
-        </li>
-      <% end %>
-    </ul>
-  </details>
-  <% if course.holes.any? %>
-    <% course.holes.order(:hole_number).map do |hole| %>
-      <span class="col">
-        <%= render hole %>
-      </span>
-    <% end %>
-  </ul>
-<% end %>
 </div>
