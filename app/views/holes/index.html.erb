@@ -1,36 +1,4 @@
 <%# find a semantic tag to encapsulate this logic %>
-<nav class="navbar navbar-expand-lg navbar-light bg-primary bg-text-white">
-  <div class="container-fluid">
-    <h1 class ="bg:green my-4 navbar-brand">
-      <%= @course.name %>
-      <%= link_to_image("edit_icon.svg", edit_course_path(@course), {title: 'Edit this course'})%>
-    </h1>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <%= link_to 'New Hole', new_course_hole_path(@course), 
-            :title => "Add a new hole to #{@course.name}", 
-            :target => '_blank', 
-            :class => 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "External course website", @course.website_url, 
-            :title => "redirect to course's main website", 
-            :target => '_blank', 
-            :class => 'nav-link' %>
-        </li>
-        <li class="nav-item">
-          <%= link_to 'Back to Course', course_path(@course),
-            :target => '_blank', 
-            :class => 'nav-link' %>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
 <ul id="holes" class="list-group">
   <% @course.holes.order("hole_number ASC").each do |hole| %>
     <li class ="list-group-item m-3 rounded">
