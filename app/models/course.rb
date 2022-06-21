@@ -11,8 +11,12 @@ class Course < ApplicationRecord
   validates :address_region, presence: true
   validates :postal_code, presence: true
 
-  def par
-    holes.reduce(0) { |sum, hole| sum + hole.par_value }
+  def par_value
+    holes.reduce(0) { |sum, hole| sum + hole.par }
+  end
+
+  def scorecard_for(user)
+    scorecards.where(user: user).first
   end
 
   # def valid?
@@ -26,5 +30,5 @@ class Course < ApplicationRecord
   end
 
   geocoded_by :address
-  after_validation :geocode, :par, :address
+  after_validation :geocode, :par_value, :address
 end

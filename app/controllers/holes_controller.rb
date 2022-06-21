@@ -75,14 +75,16 @@ class HolesController < ApplicationController
     params.require(:hole).permit(
       :course_id,
       :hole_number,
-      :par_value,
+      :par,
       :course_hcap_val,
       :center_of_green,
       :first_tee_distance,
       :second_tee_distance,
       :third_tee_distance,
       :fourth_tee_distance,
-      :fifth_tee_distance
+      :fifth_tee_distance,
+      :latitude,
+      :longitude,
     )
   end
 end

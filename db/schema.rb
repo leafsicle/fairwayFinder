@@ -80,7 +80,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_15_201312) do
 
   create_table "holes", force: :cascade do |t|
     t.integer "hole_number"
-    t.integer "par_value"
+    t.integer "par"
     t.integer "course_hcap_val"
     t.integer "first_tee_distance"
     t.integer "second_tee_distance"

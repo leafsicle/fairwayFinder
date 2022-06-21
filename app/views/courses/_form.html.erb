@@ -49,86 +49,88 @@
           <span class="input-group-text">Zipcode</span>
           <%= form.text_field :postal_code, class: "form-control", :value => course.postal_code, :pattern => "[0-9]*" %>
         </div>
+        <span class="input-group">
+          <span class="input-group-text">Hour Open</span>
+          <%= form.number_field :hour_open, class: "form-control", :value => course.hour_open, :min => 0, :max => 23, :step => 1, :placeholder => "8" %>
+        </span>
+        <span class="input-group">
+          <span class="input-group-text">Hour closed</span>
+          <%= form.number_field :hour_close, class: "form-control", :value => course.hour_close, :min => 0, :max => 23, :step => 1, :placeholder => "5" %>
+        </span>
       </div>
+      <div class="col">
+        <div>
+          <div class="form-check form-switch">
+            <%= form.check_box :driving_range, checked: course.driving_range, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Driving Range</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :putting_green, checked: course.putting_green, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Putting green</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :chipping_area, checked: course.chipping_area, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Chipping Area</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :practice_bunker, checked: course.practice_bunker, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Practice Bunker</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :riding_cart, checked: course.riding_cart, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Rental Carts Available</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :push_cart, checked: course.push_cart, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Rental Push Carts Available</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :pro_shop, checked: course.pro_shop, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Pro Shop on Site</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :club_rental, checked: course.club_rental, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Rental Clubs Available</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :caddie_services, checked: course.caddie_services, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Caddie Services Available</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :locker_room_onsite, checked: course.locker_room_onsite, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Locker Room on Site</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :shower_onsite, checked: course.shower_onsite, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Shower on Site</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :lodging_onsite, checked: course.lodging_onsite, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Lodging On Site</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :clubfitting, checked: course.clubfitting, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Club fitting services offered</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :punched_greens, checked: course.punched_greens, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Punched Greens today</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :sanded_greens, checked: course.sanded_greens, class:"form-check-input" %>
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sanded Greens</label>
+          </div>
+          <div class="form-check form-switch">
+            <%= form.check_box :membership, checked: course.membership, class:"form-check-input" %>
+            <label class="form-check-label" for="membership">Members Only</label>
+          </div>
+        </div>
+        <%= form.submit class:"submit"  %>
+      </button>
     </div>
-    <span class="form-group">
-      <label for="hour_open">Hour Open</label>
-      <%= form.number_field :hour_open, class: "form-control", :value => course.hour_open, :min => 0, :max => 23, :step => 1, :placeholder => "8" %>
-    </span>
-    <span class="form-group">
-      <label for="hour_open">Hour Open</label>
-      <%= form.number_field :hour_close, class: "form-control", :value => course.hour_close, :min => 0, :max => 23, :step => 1, :placeholder => "5" %>
-    </span>
-  </span>
-  <div class="col">
-    <div>
-      <div class="form-check form-switch">
-        <%= form.check_box :driving_range, checked: course.driving_range, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Driving Range</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :putting_green, checked: course.putting_green, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Putting green</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :chipping_area, checked: course.chipping_area, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Chipping Area</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :practice_bunker, checked: course.practice_bunker, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Practice Bunker</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :riding_cart, checked: course.riding_cart, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Rental Carts Available</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :push_cart, checked: course.push_cart, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Rental Push Carts Available</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :pro_shop, checked: course.pro_shop, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Pro Shop on Site</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :club_rental, checked: course.club_rental, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Rental Clubs Available</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :caddie_services, checked: course.caddie_services, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Caddie Services Available</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :locker_room_onsite, checked: course.locker_room_onsite, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Locker Room on Site</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :shower_onsite, checked: course.shower_onsite, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Shower on Site</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :lodging_onsite, checked: course.lodging_onsite, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Lodging On Site</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :clubfitting, checked: course.clubfitting, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Club fitting services offered</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :punched_greens, checked: course.punched_greens, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Punched Greens today</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :sanded_greens, checked: course.sanded_greens, class:"form-check-input" %>
-        <label class="form-check-label" for="flexSwitchCheckDefault">Sanded Greens</label>
-      </div>
-      <div class="form-check form-switch">
-        <%= form.check_box :membership, checked: course.membership, class:"form-check-input" %>
-        <label class="form-check-label" for="membership">Members Only</label>
-      </div>
-    </div>
-    <%# TODO  %>
-    <%# first_tee_slope: nil,
+  </div>
+  <%# TODO  %>
+  <%# first_tee_slope: nil,
       first_tee_rating: nil,
       second_tee_slope: nil,
       second_tee_rating: nil,
@@ -138,8 +140,5 @@
       fourth_tee_rating: nil,
       fifth_tee_slope: nil,
       fifth_tee_rating: nil, %>
-    <button type="button" class="btn btn-outline-sucess">
-      <%= form.submit  %>
-    </button>
-  <% end %>
+<% end %>
 </main>

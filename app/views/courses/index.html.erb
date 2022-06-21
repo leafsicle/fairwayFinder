@@ -40,7 +40,7 @@
                   <%= course.holes.count %> /
                   <%= course.hole_count %> holes | 
                   <% if course.holes.any? %>
-                    Par <%=course.par%>
+                    Par <%= course.par_value %>
                   <% end %>
                 </dd>
               </dl>
