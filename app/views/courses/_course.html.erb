@@ -1,13 +1,16 @@
 <div id="<%= dom_id course %>" class="hole-card">
-  <%= link_to "Back to courses", courses_path, {class: 'btn btn-clear mb-3'} %>
   <h2>
     <%= link_to course.name, course.website_url %>
     <%= link_to_image("edit_icon.svg", edit_course_path(@course), {title: 'Edit this course'})%>
   </h2>
   <section>
-    <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
-      <%= link_to "Add holes", new_course_hole_path(@course), {class: 'btn btn-primary'} %>
-    <% end %>
+    <address class= "course-addr">
+      <%= course.street_address %><br>
+      <%= course.address_locality %><br>
+      <%= course.address_region %>,
+      <%= course.postal_code %><br>
+      <a href="tel:<%= course.phone %>"><%= course.phone %> </a>
+    </address>
     <p>
       <% if course.holes.any? %>
         <%= course.holes.count.to_s + " / " + course.hole_count.to_s+" holes added" %>
@@ -18,14 +21,11 @@
       <br>
       <%= course.hour_open %> am to <%= course.hour_close %> pm
     </p>
-    <address class= "course-addr">
-      <%= course.street_address %><br>
-      <%= course.address_locality %><br>
-      <%= course.address_region %>,
-      <%= course.postal_code %><br>
-      <a href="tel:<%= course.phone %>"><%= course.phone %> </a>
-    </address>
+    <% if (course.holes.empty? || (course.holes.count < course.hole_count))%>
+      <%= link_to "Add holes", new_course_hole_path(@course), {class: 'btn btn-primary'} %>
+    <% end %>
   </section>
+  <hr>
   <details>
     <summary>Course Features</summary>
     <ul>
