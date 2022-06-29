@@ -1,0 +1,43 @@
+<div id="<%= dom_id course %>" class="hole-card">
+  <section>
+    <h5>
+      <%= course.name %>
+      <%=
+        link_to_image(
+          'edit_icon.svg',
+          edit_course_path(course),
+          class: 'btn btn-md    btn-outline-primary'
+        )
+      %>
+    </h5>
+    <address class="course-addr">
+      <%= course.street_address %><br />
+      <%= course.address_locality %><br />
+      <%= course.address_region %>, <%= course.postal_code %><br />
+      <a href="tel:<%= course.phone %>"><%= course.phone %> </a>
+    </address>
+    <p>
+      <% if course.holes.any? %>
+        <%=
+          course.holes.count.to_s + ' / ' + course.hole_count.to_s +
+            ' holes added'
+        %>
+        - Par <%= course.par_value %>
+      <% end %>
+      <br />
+      <%= course.hour_open %> am to <%= course.hour_close %> pm
+    </p>
+    <% if @course.holes.count < @course.hole_count %>
+      <%=
+        link_to 'Add holes',
+                new_course_hole_path(@course),
+                { class: 'btn btn-primary m-1' }
+      %>
+      <%=
+        link_to 'View all holes',
+                course_holes_path(@course),
+                { class: 'btn btn-primary m-1' }
+      %>
+    <% end %>
+  </section>
+</div>

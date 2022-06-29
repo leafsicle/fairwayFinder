@@ -1,8 +1,11 @@
 class CreateHoles < ActiveRecord::Migration[7.0]
   def change
     create_table :holes do |t|
-      t.integer :hole_number
-      t.integer :par_value
+      t.integer :hole_number,
+                index: %i[course_id hole_number],
+                null: false,
+                unique: true
+      t.integer :par
       t.decimal :latitude
       t.decimal :longitude
       t.integer :course_hcap_val

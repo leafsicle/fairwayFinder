@@ -1,3 +1,5 @@
+/* import the Bootstrap */
+@import "bootstrap";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -12,11 +14,12 @@
  *
  */
 $theme-colors: (
-  "primary": #1FD16F,
-  "secondary":#0D4526,
-  "light":  #F6FFF8,
-  "dark":#141115,
-  "warning":#FB6107
+  primary: #00bcd4,
+  secondary: #0d4526,
+  success: #4caf50,
+  info: #2196f3,
+  warning: #fb6107,
+  danger: #f44336,
+  light: #f6fff8,
+  dark: #212121
 );
-@import "bootstrap";
-

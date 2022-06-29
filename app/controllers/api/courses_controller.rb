@@ -4,7 +4,7 @@ class Api::CoursesController < ApplicationController
     render json: @courses.map { |course|
       {
         id: course.id,
-        course_name: course.course_name,
+        name: course.name,
         hole_count: course.holes.count,
         website_url: course.website_url,
         scorecard_url: course.scorecard_url,
@@ -64,7 +64,7 @@ class Api::CoursesController < ApplicationController
     render json: @courses.map { |course|
       {
         id: course.id,
-        course_name: course.course_name,
+        name: course.name,
         hole_count: course.holes.count,
         website_url: course.website_url,
         scorecard_url: course.scorecard_url,
@@ -120,7 +120,7 @@ class Api::CoursesController < ApplicationController
     @course = Course.find(id)
     render json: {
              id: course.id,
-             course_name: course.course_name,
+             name: course.name,
              hole_count: course.holes.count,
              website_url: course.website_url,
              scorecard_url: course.scorecard_url,

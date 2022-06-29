@@ -22,7 +22,7 @@ require "open-uri"
 # end
 # https://rapidapi.com/golfambit-golfambit-default/api/golf-course-finder/
 Course.create!(
-  course_name: "Mangrove Bay",
+  name: "Mangrove Bay",
   membership: false,
   hole_count: 18,
   phone: "7278937800",
@@ -65,7 +65,7 @@ Course.create!(
   rating: 5,
 )
 Course.create!(
-  course_name: "Innisbrook: Copperhead",
+  name: "Innisbrook: Copperhead",
   membership: false,
   hole_count: 18,
   phone: "800-492-6899",
@@ -114,7 +114,7 @@ puts "Adding ice to the clubhouse" if @courses.length < 2
 Hole.create!(
   hole_number: 1,
   course_hcap_val: 14,
-  par_value: 4,
+  par: 4,
   latitude: 27.831735212412138,
   longitude: -82.62234380224538,
   first_tee_distance: 278,
@@ -128,7 +128,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 2,
   course_hcap_val: 2,
-  par_value: 5,
+  par: 5,
   latitude: 27.831806798478368,
   longitude: -82.61553513898926,
   first_tee_distance: 458,
@@ -142,7 +142,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 3,
   course_hcap_val: 18,
-  par_value: 3,
+  par: 3,
   latitude: 27.830564120921192,
   longitude: -82.61484998325216,
   first_tee_distance: 100,
@@ -157,7 +157,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 4,
   course_hcap_val: 8,
-  par_value: 4,
+  par: 4,
   latitude: 27.83101578746388,
   longitude: -82.61912658350862,
   first_tee_distance: 315,
@@ -172,7 +172,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 5,
   course_hcap_val: 4,
-  par_value: 4,
+  par: 4,
   latitude: 27.830520411156026,
   longitude: -82.61577026432,
   first_tee_distance: 311,
@@ -187,7 +187,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 6,
   course_hcap_val: 6,
-  par_value: 5,
+  par: 5,
   latitude: 27.829075438636764,
   longitude: -82.61908539187789,
   first_tee_distance: 411,
@@ -202,7 +202,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 7,
   course_hcap_val: 12,
-  par_value: 4,
+  par: 4,
   latitude: 27.831422806863948,
   longitude: -82.62073742429706,
   first_tee_distance: 286,
@@ -217,7 +217,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 8,
   course_hcap_val: 16,
-  par_value: 3,
+  par: 3,
   latitude: 27.83292250514267,
   longitude: -82.62259189064902,
   first_tee_distance: 127,
@@ -232,7 +232,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 9,
   course_hcap_val: 10,
-  par_value: 4,
+  par: 4,
   latitude: 27.833790186340533,
   longitude: -82.62624458022034,
   first_tee_distance: 312,
@@ -247,7 +247,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 10,
   course_hcap_val: 15,
-  par_value: 4,
+  par: 4,
   latitude: 27.829994713591795,
   longitude: -82.62494233811016,
   first_tee_distance: 280,
@@ -262,7 +262,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 11,
   course_hcap_val: 17,
-  par_value: 3,
+  par: 3,
   latitude: 27.82910377625207,
   longitude: -82.62674683894633,
   first_tee_distance: 99,
@@ -277,7 +277,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 12,
   course_hcap_val: 1,
-  par_value: 4,
+  par: 4,
   latitude: 27.83249456205313,
   longitude: -82.6296183120104,
   first_tee_distance: 326,
@@ -292,7 +292,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 13,
   course_hcap_val: 11,
-  par_value: 4,
+  par: 4,
   latitude: 27.835219744983764,
   longitude: -82.6300612545849,
   first_tee_distance: 246,
@@ -307,7 +307,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 14,
   course_hcap_val: 5,
-  par_value: 5,
+  par: 5,
   latitude: 27.835261094342286,
   longitude: -82.62491555785259,
   first_tee_distance: 425,
@@ -322,7 +322,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 15,
   course_hcap_val: 13,
-  par_value: 3,
+  par: 3,
   latitude: 27.837651812049472,
   longitude: -82.62497081936162,
   first_tee_distance: 114,
@@ -337,7 +337,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 16,
   course_hcap_val: 9,
-  par_value: 4,
+  par: 4,
   latitude: 27.834952853334897,
   longitude: -82.62371468273649,
   first_tee_distance: 290,
@@ -352,7 +352,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 17,
   course_hcap_val: 3,
-  par_value: 5,
+  par: 5,
   latitude: 27.83454484462113,
   longitude: -82.62837188024454,
   first_tee_distance: 461,
@@ -367,7 +367,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 18,
   course_hcap_val: 7,
-  par_value: 4,
+  par: 4,
   latitude: 27.832040233958853,
   longitude: -82.62765865756361,
   first_tee_distance: 337,
@@ -382,7 +382,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 1,
   course_hcap_val: 5,
-  par_value: 5,
+  par: 5,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 456,
@@ -397,7 +397,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 2,
   course_hcap_val: 11,
-  par_value: 4,
+  par: 4,
   longitude: 0.0,
   latitude: 0.0,
   first_tee_distance: 291,
@@ -412,7 +412,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 3,
   course_hcap_val: 7,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 291,
@@ -427,7 +427,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 4,
   course_hcap_val: 17,
-  par_value: 3,
+  par: 3,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 95,
@@ -442,7 +442,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 5,
   course_hcap_val: 1,
-  par_value: 5,
+  par: 5,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 388,
@@ -457,7 +457,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 6,
   course_hcap_val: 3,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 304,
@@ -472,7 +472,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 7,
   course_hcap_val: 13,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 273,
@@ -487,7 +487,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 8,
   course_hcap_val: 15,
-  par_value: 3,
+  par: 3,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 124,
@@ -502,7 +502,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 9,
   course_hcap_val: 9,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 294,
@@ -517,7 +517,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 10,
   course_hcap_val: 15,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 295,
@@ -532,7 +532,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 11,
   course_hcap_val: 6,
-  par_value: 5,
+  par: 5,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 372,
@@ -547,7 +547,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 12,
   course_hcap_val: 12,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 315,
@@ -562,7 +562,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 13,
   course_hcap_val: 18,
-  par_value: 3,
+  par: 3,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 102,
@@ -577,7 +577,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 14,
   course_hcap_val: 2,
-  par_value: 5,
+  par: 5,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 448,
@@ -592,7 +592,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 15,
   course_hcap_val: 14,
-  par_value: 3,
+  par: 3,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 130,
@@ -607,7 +607,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 16,
   course_hcap_val: 4,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 294,
@@ -622,7 +622,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 17,
   course_hcap_val: 16,
-  par_value: 3,
+  par: 3,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 118,
@@ -637,7 +637,7 @@ Hole.create!(
 Hole.create!(
   hole_number: 18,
   course_hcap_val: 10,
-  par_value: 4,
+  par: 4,
   latitude: 0.0,
   longitude: 0.0,
   first_tee_distance: 261,

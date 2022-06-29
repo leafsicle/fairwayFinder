@@ -1,0 +1,38 @@
+<div id="<%= dom_id hole %>" class="d-flex justify-content-between ">
+  <%# this partial represents what is seen from a course/id/holes perspective %>
+  <span>
+    <span>
+      <%=
+        link_to "Hole #{hole.hole_number}", edit_course_hole_path(@course, hole)
+      %>
+    </span>
+    <span>
+      <b>Par</b>
+      <%= hole.par %>
+    </span>
+    <span>
+      <b>HCAP</b>
+      <%= hole.course_hcap_val %>
+    </span>
+
+    <details class="mt-1">
+      <p>
+        <% if hole.first_tee_distance %>
+          <%= hole.first_tee_distance %> |
+        <%end%>
+        <% if hole.second_tee_distance %>
+          <%= hole.second_tee_distance %> yds |
+        <%end%>
+        <% if hole.third_tee_distance %>
+          <%= hole.third_tee_distance %> yds
+        <%end%>
+        <% if hole.fourth_tee_distance %>
+          | <%= hole.fourth_tee_distance %> yds
+        <%end%>
+        <% if hole.fifth_tee_distance %>
+          | <%= hole.fifth_tee_distance %> yds
+        <%end%>
+      </p>
+    </details>
+  </span>
+</div>

@@ -1,0 +1,9 @@
+<h1>
+  Editing hole 
+  <%= @hole.hole_number %>
+</h1>
+<%= render "form", hole: @hole %>
+<br>
+<div>
+  <%= link_to "Back to holes", course_url(@course) %>
+</div>

@@ -1,0 +1,8 @@
+<%# find a semantic tag to encapsulate this logic %>
+<ul id="holes" class="list-group">
+  <% @course.holes.order("hole_number ASC").each do |hole| %>
+    <li class ="list-group-item m-3 rounded">
+      <%= render hole %>
+    </li>
+  <% end %>
+</ul>

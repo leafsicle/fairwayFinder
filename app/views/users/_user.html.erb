@@ -1,0 +1,28 @@
+<div id="<%= dom_id user %>">
+  <section class="d-flex justify-content-between">
+    <h5 class="m-3">
+      <%= user.full_name %>
+    </h5>
+    <span class=""> </span>
+  </section>
+  <details>
+    <summary>User Details</summary>
+    Username: <%= user.username %>
+    <a href="email:<%= user.email %>">
+      <%= user.email %>
+    </a>
+    <p>HCAP: <%= user.handicap %></p>
+    <address>
+      <%= user.street_address %> <br />
+      <%= user.address_locality %>,
+      <%= user.address_region %>
+      <%= user.postal_code %>
+    </address>
+  </details>
+  <details>
+    <summary>User Actions</summary>
+    <%# if the user has ANY rounds to display, enable the hisotry of showing all previous rounds %>
+    <button class=" btn disabled">User stats?</button>
+    <button class=" btn disabled">See list of previous rounds.</button>
+  </details>
+</div>

@@ -17,7 +17,7 @@ class HolesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create hole" do
     assert_difference("Hole.count") do
-      post holes_url, params: { hole: { center_of_green: @hole.center_of_green, course_hcap_val: @hole.course_hcap_val, course_id: @hole.course_id, fifth_tee_distance: @hole.fifth_tee_distance, first_tee_distance: @hole.first_tee_distance, fourth_tee_distance: @hole.fourth_tee_distance, hole_number: @hole.hole_number, third_tee_distance: @hole.third_tee_distance, second_tee_distance: @hole.second_tee_distance, par_value: @hole.par_value } }
+      post holes_url, params: { hole: { center_of_green: @hole.center_of_green, course_hcap_val: @hole.course_hcap_val, course_id: @hole.course_id, fifth_tee_distance: @hole.fifth_tee_distance, first_tee_distance: @hole.first_tee_distance, fourth_tee_distance: @hole.fourth_tee_distance, hole_number: @hole.hole_number, third_tee_distance: @hole.third_tee_distance, second_tee_distance: @hole.second_tee_distance, par: @hole.par } }
     end
 
     assert_redirected_to hole_url(Hole.last)
@@ -34,7 +34,7 @@ class HolesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update hole" do
-    patch hole_url(@hole), params: { hole: { center_of_green: @hole.center_of_green, course_hcap_val: @hole.course_hcap_val, course_id: @hole.course_id, fifth_tee_distance: @hole.fifth_tee_distance, first_tee_distance: @hole.first_tee_distance, fourth_tee_distance: @hole.fourth_tee_distance, hole_number: @hole.hole_number, third_tee_distance: @hole.third_tee_distance, second_tee_distance: @hole.second_tee_distance, par_value: @hole.par_value } }
+    patch hole_url(@hole), params: { hole: { center_of_green: @hole.center_of_green, course_hcap_val: @hole.course_hcap_val, course_id: @hole.course_id, fifth_tee_distance: @hole.fifth_tee_distance, first_tee_distance: @hole.first_tee_distance, fourth_tee_distance: @hole.fourth_tee_distance, hole_number: @hole.hole_number, third_tee_distance: @hole.third_tee_distance, second_tee_distance: @hole.second_tee_distance, par: @hole.par } }
     assert_redirected_to hole_url(@hole)
   end
 
