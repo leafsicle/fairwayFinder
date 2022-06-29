@@ -3,7 +3,7 @@
 one:
   hole_number: 1
   course_id: 1
-  par_value: 1
+  par: 1
   course_hcap_val: 1
   center_of_green:
   first_tee_distance: 1
@@ -16,7 +16,7 @@ one:
 two:
   hole_number: 1
   course_id: 1
-  par_value: 1
+  par: 1
   course_hcap_val: 1
   center_of_green:
   first_tee_distance: 1

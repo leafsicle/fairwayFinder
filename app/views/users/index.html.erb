@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Manage Users</h1>
+  <section class="m-1 d-flex justify-content-between">
+    <%= link_to "Add new user", new_user_path %>
+    <%= link_to "Back to courses", courses_path %>
+  </section>
+  <ul id="users" class="flex-index-data my-3 list-group">
+    <% @users.each do |user| %>
+      <li class ="list-group-item m-3 rounded">
+        <%= render user %>
+      </li>
+    <% end %>
+  </ul>
+</div>

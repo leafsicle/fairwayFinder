@@ -23,7 +23,7 @@ class HolesTest < ApplicationSystemTestCase
     fill_in "Hole number", with: @hole.hole_number
     fill_in "Long tee distance", with: @hole.third_tee_distance
     fill_in "Mid tee distance", with: @hole.second_tee_distance
-    fill_in "Par value", with: @hole.par_value
+    fill_in "Par value", with: @hole.par
     click_on "Create Hole"
 
     assert_text "Hole was successfully created"
@@ -43,7 +43,7 @@ class HolesTest < ApplicationSystemTestCase
     fill_in "Hole number", with: @hole.hole_number
     fill_in "Long tee distance", with: @hole.third_tee_distance
     fill_in "Mid tee distance", with: @hole.second_tee_distance
-    fill_in "Par value", with: @hole.par_value
+    fill_in "Par value", with: @hole.par
     click_on "Update Hole"
 
     assert_text "Hole was successfully updated"

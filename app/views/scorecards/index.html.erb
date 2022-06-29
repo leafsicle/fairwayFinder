@@ -1,0 +1,10 @@
+<h1>Scorecards</h1>
+<div id="scorecards">
+  <% @scorecards.each do |scorecard| %>
+    <%= render scorecard %>
+    <p>
+      <%= link_to "Show this scorecard", scorecard %>
+    </p>
+  <% end %>
+</div>
+<%= link_to "New scorecard", new_course_scorecard_path() %>

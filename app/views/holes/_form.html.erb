@@ -1,0 +1,49 @@
+<%= form_with(model: [@course, hole], local: true) do |form| %>
+  <% if hole.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(hole.errors.count, "error") %> prohibited this hole from being saved:</h2>
+      <ul>
+        <% hole.errors.each do |error| %>
+          <li><%= error.full_message%></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row row-cols-2">
+    <div class="input-group">
+      <span class="input-group-text">Hole Number</span>
+      <%= form.number_field :hole_number, class:"form-control", :value => hole.hole_number,  :max => hole.course.hole_count, :min => 1  %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">Course HCAP </span>
+      <%= form.number_field :course_hcap_val, class:"form-control", :value => hole.course_hcap_val, :max => hole.course.hole_count, :min => 1  %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">Par</span>
+      <%= form.number_field :par, class: "form-control", :value => hole.par %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">1st Tee</span>
+      <%= form.number_field :first_tee_distance, class: "form-control", :value => hole.first_tee_distance %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">2nd Tee</span>
+      <%= form.number_field :second_tee_distance, class: "form-control", :value => hole.second_tee_distance %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">3rd Tee</span>
+      <%= form.number_field :third_tee_distance, class: "form-control", :value => hole.third_tee_distance %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">4th Tee</span>
+      <%= form.number_field :fourth_tee_distance, class: "form-control", :value => hole.fourth_tee_distance %>
+    </div>
+    <div class="input-group">
+      <span class="input-group-text">5th Tee</span>
+      <%= form.number_field :fifth_tee_distance, class: "form-control", :value => hole.fifth_tee_distance %>
+    </div>
+  </div>
+  <button type="button" class="btn btn-outline-sucess actions">
+    <%= form.submit  %>
+  </button>
+<% end %>

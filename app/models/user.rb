@@ -17,18 +17,26 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 30 }, confirmation: { case_sensitive: true }, uniqueness: true, on: :create
 
   def set_default_role
-    self.role ||= :user
+    self.email == "cookem529@gmail.com" ? self.role = "dev" : self.role = "user"
+  end
+
+  def elevate_to_dev
+    self.role = "dev"
+  end
+
+  def reduce_to_user
+    self.role = "user"
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      user.full_name = auth.info.full_name
-      # debugger if user.full_name.nil?
-      user.avatar_url = auth.info.image
-      user.first_name = auth.info.given_name
-      user.last_name = auth.info.family_name
-    end
+    user = find_or_initialize_by(provider: auth.provider, uid: auth.uid)
+    user.email = auth.info.email
+    user.password = Devise.friendly_token[0, 20]
+    user.avatar_url = auth.info.image
+    user.full_name = auth.info.full_name
+    user.first_name = auth.info.given_name
+    user.last_name = auth.info.family_name
+    user.save
+    user
   end
 end

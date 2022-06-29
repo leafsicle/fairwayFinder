@@ -1,0 +1,22 @@
+<main class="container">
+  <% @courses.each do |course| %>
+    <div class="d-flex justify-content-between shadow p-3 mb-3 bg-body rounded">
+      <dl class="d-flex flex-column ">
+        <dt>
+          <%= link_to course.name, course_url(course) %>
+        </dt>
+        <dd>
+          <%= course.holes.count %> / <%= course.hole_count %> holes |
+          <% if course.holes.any? %>
+            Par <%= course.par_value %>
+          <% end %>
+        </dd>
+      </dl>
+    </div>
+  <% end %>
+  <%=
+    link_to 'Add course',
+            new_course_path(@course),
+            { class: 'btn btn-primary rounded-pill ' }
+  %>
+</main>

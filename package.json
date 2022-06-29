@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "app",
   "private": "true",
   "cacheDirectories": [
@@ -10,12 +11,12 @@
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds && cd client && npm run build && cd ..",
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
-  "dependencies": {   
-    "@hotwired/stimulus": "^3.0.1",  
-    "@hotwired/turbo-rails": "^7.1.0",  
-    "@popperjs/core": "^2.11.0",  
-    "bootstrap": "^5.1.3",  
-    "esbuild": "^0.14.5",  
-    "sass": "^1.45.0"  
-  }  
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@hotwired/turbo-rails": "^7.1.0",
+    "@popperjs/core": "^2.11.0",
+    "bootstrap": "^5.1.3",
+    "esbuild": "^0.14.5",
+    "sass": "^1.45.0"
+  }
 }
